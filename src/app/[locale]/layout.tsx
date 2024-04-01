@@ -2,9 +2,10 @@ import '@/style/global.css'
 
 import type { Metadata } from 'next'
 
-import Devtool from '@/components/Devtool'
-
 import { I18nProviderClient } from '@/locale/client'
+
+import Devtool from '@/components/Devtool'
+import Navbar from '@/components/Navbar'
 
 export const metadata: Metadata = {
   title: 'Ololt'
@@ -33,6 +34,7 @@ export default function RootLayout({
       </head>
       <body>
         <I18nProviderClient locale={locale}>
+          <Navbar />
           {children}
           <Devtool />
         </I18nProviderClient>

@@ -1,6 +1,6 @@
 export default function Home() {
   return (
-    <div className='capitalize container'>
+    <div className='capitalize container text-secondary h-[1000px]'>
       <p className='f-display-1'>display 1</p>
       <p className='f-display-2'>display 2</p>
       <p className='f-display-3'>display 3</p>

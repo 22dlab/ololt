@@ -119,6 +119,7 @@
       "black": "#000000",
       "white": "#ffffff",
       "transparent": "#ffffff00",
+      "brand-magenta": "#ec008c",
       "magenta-10": "#fff0f7",
       "magenta-20": "#ffd6e8",
       "magenta-30": "#ffafd2",
@@ -171,20 +172,19 @@
       "green-100": "#071908"
     },
     "text": {
-      "primary": "grey-10",
-      "primary-dark": "blue-99",
-      "secondary": "#48464C",
-      "secondary-dark": "#CAC5CD"
+      "primary": "cool-gray-100",
+      "secondary": "cool-gray-70",
+      "inverse": "cool-gray-10",
+      "accent": "brand-magenta"
     },
     "background": {
-      "primary": "#fefbff",
-      "primary-dark": "blue-10"
+      "primary": "white",
+      "secondary": "cool-gray-10",
+      "tertiary": "cool-gray-20"
     },
     "border": {
-      "primary": "grey-30",
-      "primary-dark": "blue-90",
-      "secondary": "#88a9ff",
-      "secondary-dark": "blue-50"
+      "primary": "cool-gray-30",
+      "secondary": "brand-magenta"
     }
   },
   "typography": {
@@ -406,8 +406,7 @@
           "font-family": "var(--sans)",
           "line-height": "100%",
           "font-size": "16px",
-          "font-weight": "400",
-          "text-transform": "uppercase"
+          "font-weight": "400"
         },
         "md": {
           "font-size": "16px"
@@ -422,8 +421,7 @@
           "font-family": "var(--sans)",
           "line-height": "130%",
           "font-size": "16px",
-          "font-weight": "500",
-          "text-transform": "uppercase"
+          "font-weight": "500"
         },
         "md": {
           "font-size": "16px"
@@ -438,7 +436,6 @@
           "line-height": "100%",
           "font-size": "21px",
           "font-weight": "400",
-          "text-transform": "uppercase",
           "letter-spacing": "-0.16px"
         },
         "md": {
