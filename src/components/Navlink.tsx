@@ -9,7 +9,7 @@ export default function Navlink({
 }) {
   return (
     <div
-      className={`h-full f-ui-1 py-[15px] px-16 box-border bg-primary hover:bg-secondary transition-colors ${
+      className={`h-full f-ui-1 py-[15px] px-16 box-border bg-transparent hover:bg-secondary transition-colors ${
         active && !top && 'border-b-2 border-secondary'
       }`}
     >

@@ -8,7 +8,7 @@ export default defineType({
   type: 'document',
   preview: {
     select: {
-      title: 'name'
+      title: 'name.en'
     }
   },
   fields: [
@@ -17,7 +17,7 @@ export default defineType({
     defineField({
       name: 'name',
       title: 'Section Name',
-      type: 'string',
+      type: 'localeString',
       validation: (Rule) => Rule.required()
     }),
     defineField({

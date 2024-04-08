@@ -45,7 +45,7 @@ export default function Navbar() {
     {
       en: 'Climate change',
       mn: '',
-      link: '/'
+      link: '/climate-change'
     },
     {
       en: 'Energy Certification',

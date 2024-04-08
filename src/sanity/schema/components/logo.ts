@@ -1,7 +1,19 @@
-import { defineField } from 'sanity'
+import { defineType, defineField } from 'sanity'
 
-export const logo = defineField({
+export const logo = defineType({
   title: 'Logo',
   name: 'logo',
-  type: 'image'
+  type: 'object',
+  preview: {
+    select: {
+      media: 'content'
+    }
+  },
+  fields: [
+    defineField({
+      title: 'Content',
+      name: 'content',
+      type: 'image'
+    })
+  ]
 })
