@@ -50,27 +50,27 @@ export default function Navbar() {
     {
       en: 'Energy Certification',
       mn: '',
-      link: ''
+      link: '/energy-certification'
     },
     {
       en: 'Carbon Market',
       mn: '',
-      link: ''
+      link: '/carbon-market'
     },
     {
       en: 'ESG',
       mn: '',
-      link: ''
+      link: '/esg'
     },
     {
       en: 'GHG Accounting',
       mn: '',
-      link: ''
+      link: '/ghg'
     },
     {
       en: 'Academy',
       mn: '',
-      link: ''
+      link: '/academy'
     }
   ]
 

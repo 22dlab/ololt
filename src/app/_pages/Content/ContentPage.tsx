@@ -10,8 +10,6 @@ export default function ContentPage({
   title: { en: string; mn: string }
   content: ContentType[]
 }) {
-  console.log(content[0].components)
-
   return (
     <div className='pt-96'>
       <Hero thumbnail={content[0].components[0].content} title={title} />

@@ -31,7 +31,7 @@ export default function Content({ content }: { content: ContentType[] }) {
                 {x.components.map((item, index) => {
                   switch (item._type) {
                     case 'textBlock': {
-                      return <TextBlock item={item} />
+                      return <TextBlock key={index} item={item} />
                     }
                   }
                 })}
