@@ -4,6 +4,8 @@ import TextBlock from './TextBlock'
 import IconCard from './IconCard'
 import ServiceCard from './ServiceCard'
 
+import Photo from './Photo'
+
 export default function Content({ content }: { content: ContentType[] }) {
   return (
     <div className='container py-96'>
@@ -50,6 +52,9 @@ export default function Content({ content }: { content: ContentType[] }) {
                     // case 'accordion': {
                     //   return <Accordion key={index} item={item} />
                     // }
+                    case 'photo': {
+                      return <Photo key={index} item={item} />
+                    }
                   }
                 })}
               </div>
