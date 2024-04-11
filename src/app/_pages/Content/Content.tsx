@@ -1,6 +1,8 @@
 import { ContentType } from '@/type'
 
 import TextBlock from './TextBlock'
+import IconCard from './IconCard'
+import ServiceCard from './ServiceCard'
 
 export default function Content({ content }: { content: ContentType[] }) {
   return (
@@ -33,6 +35,21 @@ export default function Content({ content }: { content: ContentType[] }) {
                     case 'textBlock': {
                       return <TextBlock key={index} item={item} />
                     }
+                    case 'iconCard': {
+                      return <IconCard key={index} item={item} />
+                    }
+                    case 'serviceCard': {
+                      return <ServiceCard key={index} item={item} />
+                    }
+                    // case 'statCard': {
+                    //   return <StatCard key={index} item={item} />
+                    // }
+                    // case 'listItem': {
+                    //   return <ListItem key={index} item={item} />
+                    // }
+                    // case 'accordion': {
+                    //   return <Accordion key={index} item={item} />
+                    // }
                   }
                 })}
               </div>

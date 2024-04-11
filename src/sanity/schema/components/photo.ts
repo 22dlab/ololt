@@ -4,6 +4,12 @@ export const photo = defineType({
   title: 'Photo',
   name: 'photo',
   type: 'object',
+  preview: {
+    select: {
+      title: 'title',
+      media: 'content'
+    }
+  },
   fields: [
     defineField({
       title: 'Content',
