@@ -15,6 +15,12 @@ export const photo = defineType({
       title: 'Content',
       name: 'content',
       type: 'image'
+    }),
+    defineField({
+      name: 'title',
+      type: 'string',
+      initialValue: 'Photo',
+      hidden: true
     })
   ]
 })
