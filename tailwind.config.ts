@@ -60,17 +60,19 @@ module.exports = {
     fontFamilies: styleConfig.typography.families,
     typesets: styleConfig.typography.typesets,
     colors: styleConfig.color.tokens,
-    textColor: ApplyColorVariables(
-      styleConfig.color.tokens,
-      styleConfig.color.text
-    ),
-    backgroundColor: ApplyColorVariables(
-      styleConfig.color.tokens,
-      styleConfig.color.background
-    ),
-    borderColor: ApplyColorVariables(
-      styleConfig.color.tokens,
-      styleConfig.color.border
-    )
+    extend: {
+      textColor: ApplyColorVariables(
+        styleConfig.color.tokens,
+        styleConfig.color.text
+      ),
+      backgroundColor: ApplyColorVariables(
+        styleConfig.color.tokens,
+        styleConfig.color.background
+      ),
+      borderColor: ApplyColorVariables(
+        styleConfig.color.tokens,
+        styleConfig.color.border
+      )
+    }
   }
 }

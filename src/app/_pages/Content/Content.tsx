@@ -32,31 +32,32 @@ export default function Content({ content }: { content: ContentType[] }) {
                     <p>{x.name.en}</p>
                   </div>
                 )}
-                {x.components.map((item, index) => {
-                  switch (item._type) {
-                    case 'textBlock': {
-                      return <TextBlock key={index} item={item} />
+                {x.components !== null &&
+                  x.components.map((item, index) => {
+                    switch (item._type) {
+                      case 'textBlock': {
+                        return <TextBlock key={index} item={item} />
+                      }
+                      case 'iconCard': {
+                        return <IconCard key={index} item={item} />
+                      }
+                      case 'serviceCard': {
+                        return <ServiceCard key={index} item={item} />
+                      }
+                      // case 'statCard': {
+                      //   return <StatCard key={index} item={item} />
+                      // }
+                      // case 'listItem': {
+                      //   return <ListItem key={index} item={item} />
+                      // }
+                      // case 'accordion': {
+                      //   return <Accordion key={index} item={item} />
+                      // }
+                      case 'photo': {
+                        return <Photo key={index} item={item} />
+                      }
                     }
-                    case 'iconCard': {
-                      return <IconCard key={index} item={item} />
-                    }
-                    case 'serviceCard': {
-                      return <ServiceCard key={index} item={item} />
-                    }
-                    // case 'statCard': {
-                    //   return <StatCard key={index} item={item} />
-                    // }
-                    // case 'listItem': {
-                    //   return <ListItem key={index} item={item} />
-                    // }
-                    // case 'accordion': {
-                    //   return <Accordion key={index} item={item} />
-                    // }
-                    case 'photo': {
-                      return <Photo key={index} item={item} />
-                    }
-                  }
-                })}
+                  })}
               </div>
             )
           })}

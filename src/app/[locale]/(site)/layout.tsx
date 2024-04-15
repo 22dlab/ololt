@@ -6,6 +6,7 @@ import { I18nProviderClient } from '@/locale/client'
 
 import Devtool from '@/components/Devtool'
 import Navbar from '@/components/Navbar'
+import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: 'Ololt'
@@ -37,6 +38,7 @@ export default function RootLayout({
           <Navbar />
           {children}
           <Devtool />
+          <Footer />
         </I18nProviderClient>
       </body>
     </html>
