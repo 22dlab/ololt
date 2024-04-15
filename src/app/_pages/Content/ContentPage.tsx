@@ -11,7 +11,7 @@ export default function ContentPage({
   content: ContentType[]
 }) {
   return (
-    <div className='pt-96'>
+    <div className='pt-96 text-primary'>
       <Hero thumbnail={content[0].components[0].content} title={title} />
       <Content content={content} />
     </div>
