@@ -19,7 +19,15 @@ export const textBlock = defineType({
       title: lang.title,
       name: lang.id,
       type: 'array',
-      of: [{ type: 'block' }],
+      of: [
+        {
+          type: 'block',
+          styles: [
+            { title: 'Normal', value: 'normal' },
+            { title: 'Heading', value: 'h4' }
+          ]
+        }
+      ],
       fieldset: lang.isDefault ? undefined : 'translation'
     })
   )

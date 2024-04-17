@@ -47,9 +47,7 @@ export default function Content({ content }: { content: ContentType[] }) {
                       // case 'statCard': {
                       //   return <StatCard key={index} item={item} />
                       // }
-                      // case 'listItem': {
-                      //   return <ListItem key={index} item={item} />
-                      // }
+
                       // case 'accordion': {
                       //   return <Accordion key={index} item={item} />
                       // }
