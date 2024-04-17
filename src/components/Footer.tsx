@@ -8,17 +8,17 @@ export default function Footer() {
     {
       en: 'About us',
       mn: '',
-      link: ''
+      link: '/about'
     },
     {
       en: 'News & Insights',
       mn: '',
-      link: ''
+      link: '/news'
     },
     {
       en: 'Contact us',
       mn: '',
-      link: ''
+      link: '/contact'
     },
     {
       en: 'Climate change',
@@ -103,12 +103,17 @@ export default function Footer() {
           </div>
           <div className='w-2-cols-vw flex flex-col space-y-8'>
             {socialLinks.map((item, index) => (
-              <Link key={index} href={item.link}>
+              <a
+                key={index}
+                href={item.link}
+                target='_blank'
+                rel='noopener noreferrer'
+              >
                 <div className='flex items-center space-x-4'>
                   <Image src={item.icon} height={16} width={16} alt='social' />
                   <p>{item.label}</p>
                 </div>
-              </Link>
+              </a>
             ))}
           </div>
         </div>

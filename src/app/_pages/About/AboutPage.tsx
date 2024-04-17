@@ -1,10 +1,10 @@
 import Hero from './Hero'
 import About from './About'
-import Partners from './Partners'
+import Partners from '../Home/Partners'
 
-export default function HomePage() {
+export default function AboutPage() {
   return (
-    <div className='pt-96 text-primary'>
+    <div className='text-primary pt-96'>
       <Hero />
       <About />
       <Partners />

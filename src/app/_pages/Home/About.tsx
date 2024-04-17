@@ -83,7 +83,7 @@ export default function About() {
   const cards = [
     {
       image: '/misc/card.png',
-      logo: '/misc/logo.svg',
+      logo: '/partners/8.png',
       title: {
         en: 'OLOLT Center now issues Renewable Energy Certificate (I-REC) in Mongolia, adhering to the I-TRACK Standard Foundation',
         mn: ''
@@ -99,7 +99,7 @@ export default function About() {
     },
     {
       image: '/misc/card-2.png',
-      logo: '/misc/logo-2.svg',
+      logo: '/partners/5.png',
       title: {
         en: 'Community member of GRI',
         mn: ''
@@ -156,7 +156,7 @@ export default function About() {
                   </div>
                   <div className='w-fit'>
                     <Link href={item.link}>
-                      <BaseLink label='See more' />
+                      <BaseLink label='See more' icon />
                     </Link>
                   </div>
                 </div>

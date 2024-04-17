@@ -30,17 +30,17 @@ export default function Navbar() {
     {
       en: 'About us',
       mn: '',
-      link: ''
+      link: '/about'
     },
     {
       en: 'News & Insights',
       mn: '',
-      link: ''
+      link: '/news'
     },
     {
       en: 'Contact us',
       mn: '',
-      link: ''
+      link: '/contact'
     },
     {
       en: 'Climate change',
