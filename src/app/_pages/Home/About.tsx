@@ -189,7 +189,7 @@ export default function About() {
                   </div>
                 </div>
               </div>
-              <div className='w-5-cols-vw px-32 py-48 bg-secondary space-y-24'>
+              <div className='w-5-cols-vw px-32 flex flex-col justify-center bg-secondary space-y-24'>
                 {index === 0 && (
                   <p className='f-tag-1 text-accent'>
                     Local Issuer of I-TRACK Standard Foundation
