@@ -1,6 +1,6 @@
 export default function Hero() {
   return (
-    <div className='w-full h-[500px] relative'>
+    <div className='w-full h-[400px] relative'>
       <div className='w-full h-full bg-black' />
       {/* <Image
         src='/misc/about-hero.png'
