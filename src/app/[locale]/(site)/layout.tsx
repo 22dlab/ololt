@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <head>
-        {/* <link
+        <link
           rel='icon'
           href='/favicon/favicon.ico'
           media='(prefers-color-scheme: light)'
@@ -31,7 +31,7 @@ export default function RootLayout({
           rel='icon'
           href='/favicon/favicon-dark.ico'
           media='(prefers-color-scheme: dark)'
-        /> */}
+        />
       </head>
       <body>
         <I18nProviderClient locale={locale}>
