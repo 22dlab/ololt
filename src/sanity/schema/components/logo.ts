@@ -6,6 +6,7 @@ export const logo = defineType({
   type: 'object',
   preview: {
     select: {
+      title: 'title',
       media: 'content'
     }
   },
@@ -14,6 +15,12 @@ export const logo = defineType({
       title: 'Content',
       name: 'content',
       type: 'image'
+    }),
+    defineField({
+      name: 'title',
+      type: 'string',
+      initialValue: 'Logo',
+      hidden: true
     })
   ]
 })
