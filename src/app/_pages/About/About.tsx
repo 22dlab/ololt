@@ -5,7 +5,7 @@ import BaseLink from '@/components/BaseLink'
 export default function About() {
   const founders = [
     {
-      photo: '',
+      photo: '/misc/founder.png',
       linkedin: 'https://www.linkedin.com/in/chuluunkhuu-baatar-9a50a2152/',
       name: {
         en: 'Chuluunkhuu. B',
@@ -21,7 +21,7 @@ export default function About() {
       }
     },
     {
-      photo: '',
+      photo: '/misc/founder-1.png',
       linkedin: 'https://www.linkedin.com/in/anand-tsog-39105a70/',
       name: {
         en: 'Anand. Ts',
@@ -161,7 +161,14 @@ export default function About() {
             {founders.map((item, index) => (
               <div key={index} className='w-full pr-1-cols-vw'>
                 <div className='w-full pr-gutter'>
-                  <div className='w-full aspect-square bg-black' />
+                  <div className='w-full aspect-square relative grayscale'>
+                    <Image
+                      src={item.photo}
+                      alt={item.name.en}
+                      fill
+                      className='object-cover object-center'
+                    />
+                  </div>
                   <div className='mt-32 space-y-16'>
                     <div className='space-y-8'>
                       <p className='f-subhead-2'>{item.name.en}</p>

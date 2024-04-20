@@ -70,9 +70,11 @@ export default defineType({
           type: 'block',
           styles: [
             { title: 'Normal', value: 'normal' },
-            { title: 'Heading', value: 'h1' },
             { title: 'Subheading', value: 'h4' }
           ]
+        },
+        {
+          type: 'image'
         }
       ]
     })
