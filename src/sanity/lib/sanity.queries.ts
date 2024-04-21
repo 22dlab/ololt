@@ -49,7 +49,7 @@ export const getNews = groq`
 `
 
 export const getNewsDetail = groq`
-  *[_type == "news"]{
+  *[_type == "news" && slug.current == $slug][0]{
     title,
     slug,
     type,
@@ -59,7 +59,13 @@ export const getNewsDetail = groq`
     thumbnail {
       ${Image}
     },
-    content
+    content[]{
+      _type,
+      style,
+      markDefs,
+      ${Image},
+      children
+    }
   }
 `
 

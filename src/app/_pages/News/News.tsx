@@ -105,13 +105,21 @@ export default function News({
           <div id='news' className='w-full py-48 space-y-60'>
             <p className='f-heading-1'>News</p>
             {newsType.map((item, index) => (
-              <Card key={index} item={item} />
+              <div className='w-fit' key={index}>
+                <Link href={`/news/${item.slug?.current}`}>
+                  <Card item={item} />
+                </Link>
+              </div>
             ))}
           </div>
           <div id='articles' className='w-full py-48 space-y-60'>
             <p className='f-heading-1'>Articles</p>
             {articleType.map((item, index) => (
-              <Card key={index} item={item} />
+              <div className='w-fit' key={index}>
+                <Link href={`/news/${item.slug?.current}`}>
+                  <Card item={item} />
+                </Link>
+              </div>
             ))}
           </div>
           <div id='videos' className='w-full py-48 space-y-60'>

@@ -24,7 +24,8 @@ export default defineType({
       options: {
         source: 'title',
         maxLength: 100
-      }
+      },
+      validation: (Rule) => Rule.required()
     }),
     defineField({
       name: 'type',
@@ -36,7 +37,7 @@ export default defineType({
           { title: 'Article', value: 'article' }
         ]
       },
-      initialValue: 'News',
+      initialValue: 'news',
       validation: (Rule) => Rule.required()
     }),
     defineField({
@@ -49,7 +50,7 @@ export default defineType({
           { title: 'Mongolian', value: 'mn' }
         ]
       },
-      initialValue: 'English',
+      initialValue: 'en',
       validation: (Rule) => Rule.required()
     }),
     defineField({
