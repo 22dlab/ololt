@@ -36,3 +36,22 @@ export type ContentType = {
   name: LocaleString
   components: ItemType[]
 }
+
+export type NewsType = {
+  title: string
+  slug: {
+    current: string
+  }
+  type: string
+  lang: string
+  date: string
+  author: string
+  thumbnail: ImageType
+  content: any[]
+}
+
+export type VideoType = {
+  title: LocaleString
+  caption: LocaleString
+  link: string
+}

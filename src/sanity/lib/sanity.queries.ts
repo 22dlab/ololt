@@ -34,6 +34,43 @@ const Content = `
   }
 `
 
+export const getNews = groq`
+  *[_type == "news"]{
+    title,
+    slug,
+    type,
+    lang,
+    date,
+    thumbnail {
+      ${Image}
+    },
+    content[0]
+  }
+`
+
+export const getNewsDetail = groq`
+  *[_type == "news"]{
+    title,
+    slug,
+    type,
+    lang,
+    date,
+    author,
+    thumbnail {
+      ${Image}
+    },
+    content
+  }
+`
+
+export const getVideos = groq`
+  *[_type == "video"]{
+    title,
+    caption,
+    link
+  }
+`
+
 export const getClimate = groq`
   *[_type == "climate"]|order(orderRank){
     ${Content}
