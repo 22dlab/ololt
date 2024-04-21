@@ -47,7 +47,14 @@ export type NewsType = {
   date: string
   author: string
   thumbnail: ImageType
-  content: any[]
+  content: [
+    {
+      _type: string
+      style: string
+      asset: any
+      children: any[]
+    }
+  ]
 }
 
 export type VideoType = {

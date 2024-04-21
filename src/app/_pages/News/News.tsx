@@ -24,11 +24,13 @@ function Card({ item }: { item: NewsType }) {
           alt='thumbnail'
         />
       </div>
-      <div className='w-4-cols-vw overflow-y-hidden h-fit'>
-        <p className='f-tag-1'>{item.date}</p>
-        <p className='f-heading-4 mt-16'>{item.title}</p>
-        <p className='f-ui-1 mt-24 line-clamp-2'>
-          {item.content.children[0].text}
+      <div className='w-4-cols-vw flex flex-col justify-between'>
+        <div className='space-y-16'>
+          <p className='f-tag-1'>{item.date}</p>
+          <p className='f-heading-4'>{item.title}</p>
+        </div>
+        <p className='f-ui-1 mt-24 line-clamp-2 text-secondary'>
+          {item.content[0].children[0].text}
         </p>
       </div>
     </div>

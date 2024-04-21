@@ -44,7 +44,12 @@ export const getNews = groq`
     thumbnail {
       ${Image}
     },
-    content[0]
+    content[]{
+      _type,
+      style,
+      ${Image},
+      children
+    }
   }
 `
 
@@ -62,7 +67,6 @@ export const getNewsDetail = groq`
     content[]{
       _type,
       style,
-      markDefs,
       ${Image},
       children
     }
