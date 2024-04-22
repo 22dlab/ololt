@@ -3,6 +3,8 @@
 import Link from 'next/link'
 import Image from 'next/image'
 
+import { WebsiteCarbonBadge } from 'react-websitecarbon-badge'
+
 export default function Footer() {
   const links = [
     {
@@ -76,7 +78,7 @@ export default function Footer() {
   return (
     <footer className='w-full bg-cool-gray-100 py-48 space-y-48'>
       <div className='container flex'>
-        <div className='w-1/2-cols mr-gutter'>
+        <div className='w-1/2-cols mr-gutter flex flex-col justify-between'>
           <Link href='/'>
             <Image
               src='/logo/logo-en-dark.svg'
@@ -85,6 +87,9 @@ export default function Footer() {
               alt='logo'
             />
           </Link>
+          {/* <div className='flex justify-start text-inverse'>
+            <WebsiteCarbonBadge co2='0.12' percentage='89' />
+          </div> */}
         </div>
         <div className='w-1/2-cols flex text-inverse f-ui-1'>
           <div className='w-2-cols-vw mr-gutter flex flex-col space-y-8'>

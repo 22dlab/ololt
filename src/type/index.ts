@@ -26,8 +26,10 @@ export type ItemType = {
   items?: [
     {
       icon?: ImageType
-      link?: string
       label?: LocaleString
+      value?: LocaleString
+      question?: LocaleString
+      answer?: LocaleString
     }
   ]
 }

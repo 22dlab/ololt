@@ -1,10 +1,21 @@
+'use client'
+
 import { NewsType } from '@/type'
 
 import { PortableText, PortableTextComponents } from 'next-sanity'
 
+import Image from 'next/image'
 import SanityImage from '@/components/SanityImage'
 
+import {
+  EmailShareButton,
+  FacebookShareButton,
+  LinkedinShareButton
+} from 'react-share'
+
 export default function Content({ news }: { news: NewsType }) {
+  const url = 'https://www.cccmdc.mn/news' + news.slug.current
+
   const components: PortableTextComponents = {
     types: {
       image: (children: any) => (
@@ -54,7 +65,35 @@ export default function Content({ news }: { news: NewsType }) {
               <p className='f-heading-1 mb-60'>{news.title}</p>
               <PortableText value={news.content} components={components} />
             </div>
-            <div className='w-2-cols'></div>
+            <div className='w-2-cols'>
+              <p className='text-right caption-1 text-secondary'>Share it</p>
+              <div className='w-full flex justify-end mt-8 space-x-8'>
+                <FacebookShareButton url={url}>
+                  <Image
+                    src='/icon/facebook.svg'
+                    height={20}
+                    width={20}
+                    alt='facebook'
+                  />
+                </FacebookShareButton>
+                <LinkedinShareButton url={url}>
+                  <Image
+                    src='/icon/linkedin.svg'
+                    height={20}
+                    width={20}
+                    alt='Linkedin'
+                  />
+                </LinkedinShareButton>
+                <EmailShareButton url={url}>
+                  <Image
+                    src='/icon/email.svg'
+                    height={20}
+                    width={20}
+                    alt='Email'
+                  />
+                </EmailShareButton>
+              </div>
+            </div>
           </div>
         </div>
       </div>

@@ -30,6 +30,9 @@ const Content = `
       },
       link,
       label,
+      value,
+      question,
+      answer
     }
   }
 `

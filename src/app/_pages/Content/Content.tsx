@@ -8,7 +8,10 @@ import { ContentType } from '@/type'
 import TextBlock from './TextBlock'
 import IconCard from './IconCard'
 import ServiceCard from './ServiceCard'
+import StatCard from './StatCard'
+import Accordion from './Accordion'
 import Photo from './Photo'
+import Logo from './Logo'
 
 export default function Content({ content }: { content: ContentType[] }) {
   const refs = useRef<Array<HTMLDivElement | null>>([])
@@ -57,15 +60,17 @@ export default function Content({ content }: { content: ContentType[] }) {
                       case 'serviceCard': {
                         return <ServiceCard key={index} item={item} />
                       }
-                      // case 'statCard': {
-                      //   return <StatCard key={index} item={item} />
-                      // }
-
-                      // case 'accordion': {
-                      //   return <Accordion key={index} item={item} />
-                      // }
+                      case 'statCard': {
+                        return <StatCard key={index} item={item} />
+                      }
+                      case 'accordion': {
+                        return <Accordion key={index} item={item} />
+                      }
                       case 'photo': {
                         return <Photo key={index} item={item} />
+                      }
+                      case 'logo': {
+                        return <Logo key={index} item={item} />
                       }
                     }
                   })}
