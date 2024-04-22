@@ -45,16 +45,30 @@ export default function Hero() {
   ]
 
   return (
-    <div className='w-full h-[500px] relative'>
+    <div className='w-full h-[720px] md:h-[500px] relative'>
       <Image
         src='/misc/map.svg'
-        className='object-cover object-center'
+        className='object-cover object-center hidden lg:block'
         fill
         alt='map'
       />
-      <div className='absolute top-[68px] w-full'>
+      <Image
+        src='/misc/map-md.svg'
+        className='object-cover object-center hidden md:block lg:hidden'
+        fill
+        alt='map'
+      />
+      <div className='block md:hidden w-full h-[500px] relative'>
+        <Image
+          src='/misc/map-sm.svg'
+          className='object-cover object-center'
+          fill
+          alt='map'
+        />
+      </div>
+      <div className='absolute top-[138px] md:top-[68px] w-full'>
         <div className='container'>
-          <div className='w-5-cols space-y-24'>
+          <div className='w-4-cols-vw lg:w-5-cols-vw space-y-24'>
             <p className='f-heading-3'>Climate Change in Mongolia</p>
             <p className='text-secondary f-body-1'>
               Mongolia is experiencing significant impacts of climate change,
@@ -71,7 +85,7 @@ export default function Hero() {
       </div>
       <div className='absolute bottom-0 w-full'>
         <div className='container'>
-          <div className='w-8-cols-vw grid grid-cols-4 gap-x-gutter'>
+          <div className='w-4-cols-vw md:w-8-cols-vw grid grid-cols-2 md:grid-cols-4 gap-gutter'>
             {items.map((item, index) => (
               <div
                 key={index}

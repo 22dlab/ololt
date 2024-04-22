@@ -77,8 +77,8 @@ export default function Footer() {
 
   return (
     <footer className='w-full bg-cool-gray-100 py-48 space-y-48'>
-      <div className='container flex'>
-        <div className='w-1/2-cols mr-gutter flex flex-col justify-between'>
+      <div className='container lg:flex space-y-16 lg:space-y-0'>
+        <div className='w-full lg:w-1/2-cols lg:mr-gutter flex flex-col justify-between pb-60'>
           <Link href='/'>
             <Image
               src='/logo/logo-en-dark.svg'
@@ -91,22 +91,22 @@ export default function Footer() {
             <WebsiteCarbonBadge co2='0.12' percentage='89' />
           </div> */}
         </div>
-        <div className='w-1/2-cols flex text-inverse f-ui-1'>
-          <div className='w-2-cols-vw mr-gutter flex flex-col space-y-8'>
+        <div className='w-full lg:w-1/2-cols grid grid-cols-1 md:grid-cols-3 gap-x-gutter text-inverse f-ui-1 border-none md:border-t lg:border-none border-[#4D5358] lg:py-0 divide-y divide-[#4D5358] md:divide-none'>
+          <div className='w-full lg:w-2-cols-vw flex flex-col space-y-8 py-24 lg:py-0'>
             {links.slice(3, 9).map((item, index) => (
               <Link key={index} href={item.link}>
                 {item.en}
               </Link>
             ))}
           </div>
-          <div className='w-2-cols-vw mr-gutter flex flex-col space-y-8'>
+          <div className='w-full lg:w-2-cols-vw flex flex-col space-y-8 py-24 lg:py-0'>
             {links.slice(0, 3).map((item, index) => (
               <Link key={index} href={item.link}>
                 {item.en}
               </Link>
             ))}
           </div>
-          <div className='w-2-cols-vw flex flex-col space-y-8'>
+          <div className='w-full lg:w-2-cols-vw flex flex-col space-y-8 py-24 lg:py-0'>
             {socialLinks.map((item, index) => (
               <a
                 key={index}

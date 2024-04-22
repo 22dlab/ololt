@@ -4,7 +4,7 @@ import Partners from './Partners'
 
 export default function HomePage() {
   return (
-    <div className='pt-96 text-primary'>
+    <div className='pt-48 lg:pt-96 text-primary'>
       <Hero />
       <About />
       <Partners />

@@ -116,47 +116,99 @@ export default function About() {
   ]
 
   return (
-    <div className='container px-2-cols-vw'>
-      <div className='w-full px-gutter py-64 space-y-64'>
-        <div className='w-full flex'>
-          <div className='w-2-cols-vw mr-gutter'>
-            <p className='text-secondary f-heading-4'>About Ololt</p>
-          </div>
-          <div className='w-6-cols-vw'>
-            <p className='f-body-1 mb-24'>
-              At the heart of our vision is a dedication to lead the way in
-              creating a climate-smart, sustainable society. We accomplish this
-              by strategically employing a combination of innovative market and
-              non-market instruments firmly grounded in integrity. Through
-              prioritizing strategic partnerships, empowering professional
-              communities, fostering scientific and economic research, and
-              advocating for change, we are committed to efficiently scale up
-              our endeavors, to push forward our national targets in alignment
-              with the Paris Agreement.
-            </p>
-            <div className='w-fit'>
-              <Link href='/about'>
-                <BaseButton type='primary' label='Learn more' icon />
-              </Link>
+    <>
+      <div className='container md:px-1-cols-vw lg:px-2-cols-vw'>
+        <div className='w-full md:px-gutter py-64 space-y-64'>
+          <div className='w-full md:flex space-y-16 md:space-y-0'>
+            <div className='w-2-cols-vw mr-gutter'>
+              <p className='text-secondary f-heading-4'>About Ololt</p>
+            </div>
+            <div className='w-4-cols-vw lg:w-6-cols-vw'>
+              <p className='f-body-1 mb-24'>
+                At the heart of our vision is a dedication to lead the way in
+                creating a climate-smart, sustainable society. We accomplish
+                this by strategically employing a combination of innovative
+                market and non-market instruments firmly grounded in integrity.
+                Through prioritizing strategic partnerships, empowering
+                professional communities, fostering scientific and economic
+                research, and advocating for change, we are committed to
+                efficiently scale up our endeavors, to push forward our national
+                targets in alignment with the Paris Agreement.
+              </p>
+              <div className='w-fit'>
+                <Link href='/about'>
+                  <BaseButton type='primary' label='Learn more' icon />
+                </Link>
+              </div>
             </div>
           </div>
-        </div>
-        <div className='w-full flex'>
-          <div className='w-2-cols-vw mr-gutter'>
-            <p className='text-secondary f-heading-4'>Focus areas</p>
-          </div>
-          <div className='w-6-cols-vw grid grid-cols-2 gap-gutter'>
-            {items.map((item, index) => (
-              <div key={index} className='w-full px-20 py-24 bg-secondary'>
-                <Image height={40} width={40} src={item.icon} alt='icon' />
-                <div className='w-full flex flex-col justify-between mt-16 space-y-16'>
-                  <div className='space-y-12 h-[190px]'>
-                    <p className='f-heading-4'>{item.title.en}</p>
-                    <p className='f-ui-1 text-secondary'>{item.text.en}</p>
+          <div className='w-full lg:flex space-y-16 lg:space-y-0'>
+            <div className='w-2-cols-vw mr-gutter'>
+              <p className='text-secondary f-heading-4'>Focus areas</p>
+            </div>
+            <div className='w-4-cols-vw md:w-6-cols-vw grid grid-cols-1 md:grid-cols-2 gap-gutter'>
+              {items.map((item, index) => (
+                <div
+                  key={index}
+                  className='w-full px-20 py-24 bg-secondary flex flex-col justify-between space-y-16'
+                >
+                  <div className='space-y-16'>
+                    <Image height={40} width={40} src={item.icon} alt='icon' />
+                    <div className='space-y-12'>
+                      <p className='f-heading-4'>{item.title.en}</p>
+                      <p className='f-ui-1 text-secondary'>{item.text.en}</p>
+                    </div>
                   </div>
+
                   <div className='w-fit'>
                     <Link href={item.link}>
                       <BaseLink label='See more' icon />
+                    </Link>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className='container lg:px-2-cols-vw'>
+        <div className='w-full lg:px-gutter py-64'>
+          <div className='w-full space-y-64'>
+            {cards.map((item, index) => (
+              <div key={index} className='w-full md:flex'>
+                <div className='w-full md:flex-grow md:w-fit aspect-[4/3] md:aspect-square relative'>
+                  <Image
+                    src={item.image}
+                    fill
+                    className='object-cover object-center'
+                    alt='image'
+                  />
+                  <div
+                    className={`${
+                      index === 0 ? 'h-[60px]' : 'h-[75px]'
+                    } w-full absolute left-0 top-1/2 -translate-y-1/2`}
+                  >
+                    <div className='w-full h-full relative'>
+                      <Image
+                        src={item.logo}
+                        fill
+                        className='object-contain object-center'
+                        alt='logo'
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div className='w-full md:w-5-cols-vw px-24 md:px-32 py-24 flex flex-col justify-center bg-secondary space-y-24'>
+                  {index === 0 && (
+                    <p className='f-tag-1 text-accent'>
+                      Local Issuer of I-TRACK Standard Foundation
+                    </p>
+                  )}
+                  <p className='f-heading-4'>{item.title.en}</p>
+                  <p className='text-secondary f-ui-1'>{item.text.en}</p>
+                  <div className='w-fit'>
+                    <Link href='/'>
+                      <BaseButton type='secondary' icon label={item.label.en} />
                     </Link>
                   </div>
                 </div>
@@ -164,49 +216,7 @@ export default function About() {
             ))}
           </div>
         </div>
-        <div className='w-full space-y-64'>
-          {cards.map((item, index) => (
-            <div key={index} className='w-full flex'>
-              <div className='flex-grow aspect-square relative'>
-                <Image
-                  src={item.image}
-                  fill
-                  className='object-cover object-center'
-                  alt='image'
-                />
-                <div
-                  className={`${
-                    index === 0 ? 'h-[60px]' : 'h-[75px]'
-                  } w-full absolute left-0 top-1/2 -translate-y-1/2`}
-                >
-                  <div className='w-full h-full relative'>
-                    <Image
-                      src={item.logo}
-                      fill
-                      className='object-contain object-center'
-                      alt='logo'
-                    />
-                  </div>
-                </div>
-              </div>
-              <div className='w-5-cols-vw px-32 flex flex-col justify-center bg-secondary space-y-24'>
-                {index === 0 && (
-                  <p className='f-tag-1 text-accent'>
-                    Local Issuer of I-TRACK Standard Foundation
-                  </p>
-                )}
-                <p className='f-heading-4'>{item.title.en}</p>
-                <p className='text-secondary f-ui-1'>{item.text.en}</p>
-                <div className='w-fit'>
-                  <Link href='/'>
-                    <BaseButton type='secondary' icon label={item.label.en} />
-                  </Link>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
       </div>
-    </div>
+    </>
   )
 }
