@@ -97,13 +97,13 @@ export default function About() {
   ]
 
   return (
-    <div className='container px-2-cols-vw'>
-      <div className='w-full px-gutter py-64 space-y-64'>
-        <div className='w-full flex'>
-          <div className='w-2-cols-vw mr-gutter'>
+    <div className='container md:px-1-cols-vw lg:px-2-cols-vw'>
+      <div className='w-full md:px-gutter py-64 space-y-64'>
+        <div className='w-full lg:flex space-y-16 lg:space-y-0'>
+          <div className='lg:w-2-cols-vw lg:mr-gutter'>
             <p className='text-secondary f-heading-4'>Vision</p>
           </div>
-          <div className='w-6-cols-vw'>
+          <div className='md:w-6-cols-vw'>
             <p className='f-body-1'>
               We are aspired to contribute to the pursuit of a climate smart and
               sustainable society by strategically employing a combination of
@@ -112,11 +112,11 @@ export default function About() {
             </p>
           </div>
         </div>
-        <div className='w-full flex'>
-          <div className='w-2-cols-vw mr-gutter'>
+        <div className='w-full lg:flex space-y-16 lg:space-y-0'>
+          <div className='lg:w-2-cols-vw lg:mr-gutter'>
             <p className='text-secondary f-heading-4'>Mission</p>
           </div>
-          <div className='w-6-cols-vw'>
+          <div className='md:w-6-cols-vw'>
             <p className='f-body-1'>
               Our mission is to efficiently scale up our endeavors, to push
               forward our national targets in alignment with the Paris Agreement
@@ -126,11 +126,11 @@ export default function About() {
             </p>
           </div>
         </div>
-        <div className='w-full flex'>
-          <div className='w-2-cols-vw mr-gutter'>
+        <div className='w-full lg:flex space-y-16 lg:space-y-0'>
+          <div className='lg:w-2-cols-vw lg:mr-gutter'>
             <p className='text-secondary f-heading-4'>Our story</p>
           </div>
-          <div className='w-6-cols-vw'>
+          <div className='md:w-6-cols-vw'>
             <p className='f-body-1'>
               The OLOLT Center was founded with a strong commitment to
               bolstering Mongolia&apos;s efforts in mitigating and adapting to
@@ -153,14 +153,14 @@ export default function About() {
             </p>
           </div>
         </div>
-        <div className='w-full flex'>
-          <div className='w-2-cols-vw mr-gutter'>
+        <div className='w-full lg:flex space-y-16 lg:space-y-0'>
+          <div className='lg:w-2-cols-vw lg:mr-gutter'>
             <p className='text-secondary f-heading-4'>Founders</p>
           </div>
-          <div className='w-6-cols-vw grid grid-cols-2 gap-gutter'>
+          <div className='md:w-6-cols-vw grid grid-cols-2 gap-gutter'>
             {founders.map((item, index) => (
-              <div key={index} className='w-full pr-1-cols-vw'>
-                <div className='w-full pr-gutter'>
+              <div key={index} className='w-full md:pr-1-cols-vw'>
+                <div className='w-full md:pr-gutter'>
                   <div className='w-full aspect-square relative grayscale'>
                     <Image
                       src={item.photo}
@@ -191,11 +191,11 @@ export default function About() {
             ))}
           </div>
         </div>
-        <div className='w-full flex'>
-          <div className='w-2-cols-vw mr-gutter'>
+        <div className='w-full lg:flex space-y-16 lg:space-y-0'>
+          <div className='lg:w-2-cols-vw lg:mr-gutter'>
             <p className='text-secondary f-heading-4'>Our approach</p>
           </div>
-          <div className='w-6-cols-vw space-y-40'>
+          <div className='md:w-6-cols-vw space-y-40'>
             {approach.map((item, index) => (
               <div key={index} className='flex items-start'>
                 <div className='w-1-cols-vw mr-gutter aspect-square p-10'>
@@ -208,7 +208,7 @@ export default function About() {
                     />
                   </div>
                 </div>
-                <div className='w-5-cols-vw py-10 space-y-16'>
+                <div className='w-3-cols-vw md:w-5-cols-vw py-10 space-y-16'>
                   <p className='f-subhead-2'>{item.title.en}</p>
                   <p className='f-body-1'>{item.text.en}</p>
                 </div>

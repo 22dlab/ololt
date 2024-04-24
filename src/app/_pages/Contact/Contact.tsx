@@ -46,65 +46,67 @@ export default function Contact() {
   ]
 
   return (
-    <div className='pt-[78px] pb-[112px] container flex'>
-      <div className='w-1/2-cols mr-gutter'>
-        <p className='f-body-1 w-3-cols-vw'>
-          Please double-check your email address fand choose the subject you
-          want to contact with us over so then we can connect you with the
-          relevant professional from our team.
-        </p>
-        <div className='space-y-8 mt-48'>
-          {socialLinks.map((item, index) => (
-            <a
-              key={index}
-              href={item.link}
-              target='_blank'
-              rel='noopener noreferrer'
-            >
-              <div className='flex items-center space-x-4'>
-                <Image src={item.icon} height={16} width={16} alt='social' />
-                <p>{item.label}</p>
-              </div>
-            </a>
-          ))}
+    <div className='pt-[78px] pb-[112px] container md:px-1-cols-vw lg:px-0'>
+      <div className='lg:flex px-0 md:px-gutter lg:px-0 space-y-72 md:space-y-[84px] lg:space-y-0'>
+        <div className='lg:w-1/2-cols lg:mr-gutter'>
+          <p className='f-body-1 lg:w-3-cols-vw'>
+            Please double-check your email address fand choose the subject you
+            want to contact with us over so then we can connect you with the
+            relevant professional from our team.
+          </p>
+          <div className='space-y-8 mt-40 lg:mt-48'>
+            {socialLinks.map((item, index) => (
+              <a
+                key={index}
+                href={item.link}
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                <div className='flex items-center space-x-4'>
+                  <Image src={item.icon} height={16} width={16} alt='social' />
+                  <p>{item.label}</p>
+                </div>
+              </a>
+            ))}
+          </div>
         </div>
-      </div>
-      <div className='w-1/2-cols grid grid-cols-2 gap-x-gutter gap-y-40'>
-        <Input
-          label='First name (Required)'
-          name='firstname'
-          placeholder='Your first name'
-        />
-
-        <Input
-          label='Last name (Required)'
-          name='lastname'
-          placeholder='Your first name'
-        />
-
-        <Input
-          label='Organization'
-          name='firstname'
-          placeholder='Your organization'
-        />
-
-        <Input
-          label='Email address (Required)'
-          name='firstname'
-          placeholder='Your email address'
-        />
-        <div className='col-span-2'>
-          <p className='f-ui-2'>Leave your comments (Required)</p>
-          <textarea
-            style={{ resize: 'none' }}
-            rows={6}
-            placeholder='Your comments here'
-            className='w-full mt-16 bg-[#ffffff00] border p-16 border-secondary'
+        <div className='lg:w-1/2-cols grid grid-cols-1 lg:grid-cols-2 gap-x-gutter gap-y-40'>
+          <Input
+            label='First name (Required)'
+            name='firstname'
+            placeholder='Your first name'
           />
+
+          <Input
+            label='Last name (Required)'
+            name='lastname'
+            placeholder='Your first name'
+          />
+
+          <Input
+            label='Organization'
+            name='firstname'
+            placeholder='Your organization'
+          />
+
+          <Input
+            label='Email address (Required)'
+            name='firstname'
+            placeholder='Your email address'
+          />
+          <div className='col-span-1 lg:col-span-2'>
+            <p className='f-ui-2'>Leave your comments (Required)</p>
+            <textarea
+              style={{ resize: 'none' }}
+              rows={6}
+              placeholder='Your comments here'
+              className='w-full mt-16 bg-[#ffffff00] border p-16 border-secondary'
+            />
+          </div>
+          <button type='submit'>
+            <BaseButton type='primary' label='Send message' icon />
+          </button>
         </div>
-        <button type='submit'>
-          <BaseButton type='primary' label='Send message' icon />
-        </button>
       </div>
     </div>
   )

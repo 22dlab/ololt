@@ -39,10 +39,10 @@ export default function Content({ news }: { news: NewsType }) {
   }
 
   return (
-    <div className='w-full relative py-72'>
-      <div className='w-full h-[400px] bg-secondary top-0 absolute z-[-1]' />
-      <div className='container px-1-cols-vw'>
-        <div className='px-gutter'>
+    <div className='w-full relative py-48 lg:py-72'>
+      <div className='hidden lg:block w-full h-[400px] bg-secondary top-0 absolute z-[-1]' />
+      <div className='container lg:px-1-cols-vw'>
+        <div className='lg:px-gutter'>
           <div className='w-full aspect-[2/1] relative'>
             <SanityImage
               image={news.thumbnail}
@@ -50,8 +50,12 @@ export default function Content({ news }: { news: NewsType }) {
               alt={news.title}
             />
           </div>
-          <div className='mt-96 w-full flex'>
-            <div className='w-2-cols-vw mr-gutter space-y-8'>
+        </div>
+      </div>
+      <div className='container md:px-1-cols-vw'>
+        <div className='md:px-gutter'>
+          <div className='mt-40 lg:mt-96 w-full lg:flex divide-y divide-[#C1C7CD] lg:divide-none space-y-[40px] lg:space-y-0'>
+            <div className='w-full lg:w-2-cols-vw mr-gutter space-y-8'>
               <p className='f-tag-1 text-accent'>{news.type}</p>
               <p className='f-caption-1'>
                 <span className='text-secondary'>Date:</span> {news.date}
@@ -61,13 +65,15 @@ export default function Content({ news }: { news: NewsType }) {
                 {news.author}
               </p>
             </div>
-            <div className='w-6-cols-vw mr-gutter f-body-1 space-y-16'>
-              <p className='f-heading-1 mb-60'>{news.title}</p>
+            <div className='w-full lg:w-6-cols-vw mr-gutter f-body-1 space-y-16 pt-24 md:pt-40 lg:pt-0'>
+              <p className='f-heading-1 mb-40 lg:mb-60'>{news.title}</p>
               <PortableText value={news.content} components={components} />
             </div>
-            <div className='w-2-cols'>
-              <p className='text-right caption-1 text-secondary'>Share it</p>
-              <div className='w-full flex justify-end mt-8 space-x-8'>
+            <div className='w-full lg:w-2-cols flex lg:block justify-between pt-24 md:pt-40 lg:pt-0'>
+              <p className='w-1/2-cols lg:w-full text-left lg:text-right caption-1 text-secondary'>
+                Share it
+              </p>
+              <div className='w-1/2-cols lg:w-full flex justify-start lg:justify-end mt-8 space-x-8'>
                 <FacebookShareButton url={url}>
                   <Image
                     src='/icon/facebook.svg'

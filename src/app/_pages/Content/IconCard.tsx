@@ -4,9 +4,9 @@ import { ItemType } from '@/type'
 
 export default function IconCard({ item }: { item: ItemType }) {
   return (
-    <div className='w-6-cols-vw space-y-32'>
+    <div className='lg:w-6-cols-vw space-y-32'>
       <p className='f-heading-4'>{item.title?.en}</p>
-      <div className='grid grid-cols-3 gap-x-gutter gap-y-32'>
+      <div className='grid grid-cols-2 md:grid-cols-3 gap-x-gutter gap-y-32'>
         {item.items?.map((x, index) => (
           <div
             key={index}

@@ -15,7 +15,7 @@ export default function TextBlock({ item }: { item: ItemType }) {
   }
 
   return (
-    <div className='w-6-cols-vw f-body-1 space-y-16'>
+    <div className='lg:w-6-cols-vw f-body-1 space-y-16'>
       <PortableText value={item.en} components={components} />
     </div>
   )

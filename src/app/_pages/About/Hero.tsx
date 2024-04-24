@@ -8,9 +8,9 @@ export default function Hero() {
         fill
         alt='map'
       /> */}
-      <div className='absolute bottom-[72px] w-full'>
+      <div className='absolute top-72 lg:bottom-72 w-full'>
         <div className='container'>
-          <div className='w-6-cols-vw'>
+          <div className='md:w-5-cols-vw lg:w-6-cols-vw'>
             <p className='text-inverse f-display-3'>
               Driving Climate Actions Bridging Stakeholders <br />
               With{' '}
@@ -22,8 +22,8 @@ export default function Hero() {
         </div>
       </div>
       <div className='absolute bottom-[72px] w-full'>
-        <div className='container flex justify-end'>
-          <div className='w-4-cols-vw'>
+        <div className='container flex lg:justify-end'>
+          <div className='lg:w-4-cols-vw'>
             <p className='text-inverse f-body-1'>
               OLOLT Climate Change and Carbon Market Development Center is a
               climate-solution oriented non-governmental organization.

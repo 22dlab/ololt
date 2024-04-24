@@ -193,7 +193,7 @@ export default function Navbar() {
             transition={{ duration: '0.5', ease: 'easeOut' }}
             className='fixed mt-[49px] inset-0 w-screen min-h-screen overflow-y-scroll bg-white text-primary'
           >
-            <div className='h-[calc(100vh+1px)] pt-32 pb-[192px] flex flex-col justify-between'>
+            <div className='h-[calc(100vh+1px)] pt-32 pb-[192px] space-y-64 flex flex-col justify-between'>
               <div className='divide-y divide-[#C1C7CD] border-y border-primary'>
                 {links.slice(3, 9).map((item, index) => (
                   <div
