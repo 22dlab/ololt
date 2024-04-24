@@ -13,7 +13,7 @@ export default function Accordion({ item }: { item: ItemType }) {
   }
 
   return (
-    <div className='w-6-cols-vw space-y-32'>
+    <div className='lg:w-6-cols-vw space-y-32'>
       <p className='f-heading-4'>{item.title?.en}</p>
       <div className='space-y-16'>
         {item.items?.map((x, index) => (
