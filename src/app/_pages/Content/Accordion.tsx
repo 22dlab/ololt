@@ -22,7 +22,7 @@ export default function Accordion({ item }: { item: ItemType }) {
               onClick={() => handleClick(index)}
               className='w-full flex p-16 justify-between space-x-16 bg-secondary'
             >
-              <p className='f-heading-5'>{x.question?.en}</p>
+              <p className='f-heading-5 text-left'>{x.question?.en}</p>
               <svg
                 width='24'
                 height='24'
