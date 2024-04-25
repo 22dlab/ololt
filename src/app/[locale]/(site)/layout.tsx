@@ -8,6 +8,8 @@ import Devtool from '@/components/Devtool'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 
+import { Analytics } from '@vercel/analytics/react'
+
 export async function generateMetadata({
   params: { locale }
 }: {
@@ -51,6 +53,7 @@ export default function RootLayout({
           {children}
           {/* <Devtool /> */}
           {/* <Footer /> */}
+          <Analytics />
         </I18nProviderClient>
       </body>
     </html>
