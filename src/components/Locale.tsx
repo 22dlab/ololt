@@ -24,7 +24,7 @@ export default function Locale() {
           />
         </svg>
       </div>
-      <div className='z-20 -translate-x-1/2 left-1/2 absolute opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto duration-300 transition-opacity'>
+      <div className='z-20 -translate-x-1/2 left-1/2 absolute opacity-0 group-hover:opacity-100 group-active:opacity-100 pointer-events-none group-hover:pointer-events-auto group-active:pointer-events-auto duration-300 transition-opacity'>
         <div className='flex flex-col bg-primary shadow-[0_2px_6px_0px_rgba(0,0,0,0.3)]'>
           <button
             onClick={() => changeLocale('en')}
