@@ -8,8 +8,20 @@ import Devtool from '@/components/Devtool'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 
-export const metadata: Metadata = {
-  title: 'Ololt'
+export async function generateMetadata({
+  params: { locale }
+}: {
+  params: { locale: string }
+}): Promise<Metadata> {
+  if (locale === 'en') {
+    return {
+      title: 'Climate Change & Carbon Market Development Center'
+    }
+  } else {
+    return {
+      title: 'Уур амьсгалын өөрчлөлт, Нүүрстөрөгчийн зах зээлийн хөгжлийн төв'
+    }
+  }
 }
 
 export default function RootLayout({

@@ -4,52 +4,55 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 import { WebsiteCarbonBadge } from 'react-websitecarbon-badge'
+import { useCurrentLocale } from '@/locale/client'
 
 export default function Footer() {
+  const locale = useCurrentLocale()
+
   const links = [
     {
       en: 'About us',
-      mn: '',
+      mn: 'Бидний тухай',
       link: '/about'
     },
     {
       en: 'News & Insights',
-      mn: '',
+      mn: 'Мэдээ, мэдээлэл',
       link: '/news'
     },
     {
       en: 'Contact us',
-      mn: '',
+      mn: 'Бидэнтэй холбогдох',
       link: '/contact'
     },
     {
       en: 'Climate change',
-      mn: '',
+      mn: 'Уур амьсгалын өөрчлөлт',
       link: '/climate-change'
     },
     {
       en: 'Energy Certification',
-      mn: '',
+      mn: 'Эрчим хүчний гэрчилгээ',
       link: '/energy-certification'
     },
     {
       en: 'Carbon Market',
-      mn: '',
+      mn: 'Нүүрстөрөгчийн зах зээл',
       link: '/carbon-market'
     },
     {
       en: 'ESG',
-      mn: '',
+      mn: 'БНЗ',
       link: '/esg'
     },
     {
       en: 'GHG Accounting',
-      mn: '',
+      mn: 'Хүлэмжийн хийн тооллого',
       link: '/ghg'
     },
     {
       en: 'Academy',
-      mn: '',
+      mn: 'Aкадеми',
       link: '/academy'
     }
   ]
@@ -81,9 +84,13 @@ export default function Footer() {
         <div className='w-full lg:w-1/2-cols lg:mr-gutter flex flex-col justify-between pb-60'>
           <Link href='/'>
             <Image
-              src='/logo/logo-en-dark.svg'
+              src={
+                locale === 'en'
+                  ? '/logo/logo-en-dark.svg'
+                  : '/logo/logo-mn-dark.svg'
+              }
               height={60}
-              width={156}
+              width={locale === 'en' ? 156 : 212}
               alt='logo'
             />
           </Link>
@@ -95,14 +102,14 @@ export default function Footer() {
           <div className='w-full lg:w-2-cols-vw flex flex-col space-y-8 py-24 lg:py-0'>
             {links.slice(3, 9).map((item, index) => (
               <Link key={index} href={item.link}>
-                {item.en}
+                {item[locale]}
               </Link>
             ))}
           </div>
           <div className='w-full lg:w-2-cols-vw flex flex-col space-y-8 py-24 lg:py-0'>
             {links.slice(0, 3).map((item, index) => (
               <Link key={index} href={item.link}>
-                {item.en}
+                {item[locale]}
               </Link>
             ))}
           </div>
@@ -125,10 +132,21 @@ export default function Footer() {
       </div>
       <div className='container flex text-cool-gray-40 border-t border-secondary pt-16 f-caption-1'>
         <div className='w-1/2-cols mr-gutter'>
-          ©{year} Ololt. All rights reserved.
+          ©{year}{' '}
+          {locale === 'en'
+            ? 'Ololt. All rights reserved.'
+            : 'Ололт. Бүх эрх хуулиар хамгаалагдсан.'}
         </div>
         <div className='w-1/2-cols'>
-          <a>Website by 22DesignLab</a>
+          <a
+            href='https://www.22dlab.com'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            {locale === 'en'
+              ? 'Website by 22DesignLab'
+              : 'Вебсайтыг 22DesignLab'}
+          </a>
         </div>
       </div>
     </footer>

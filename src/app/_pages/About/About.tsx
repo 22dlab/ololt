@@ -2,22 +2,26 @@ import Image from 'next/image'
 
 import BaseLink from '@/components/BaseLink'
 
+import { getCurrentLocale } from '@/locale/server'
+
 export default function About() {
+  const locale = getCurrentLocale()
+
   const founders = [
     {
       photo: '/misc/founder.png',
       linkedin: 'https://www.linkedin.com/in/chuluunkhuu-baatar-9a50a2152/',
       name: {
         en: 'Chuluunkhuu. B',
-        mn: ''
+        mn: 'Б. Чулуунхүү'
       },
       position: {
-        en: 'Co-founder',
-        mn: ''
+        en: 'Co-founder, Chair of Board',
+        mn: 'Үндэслэн байгуулагч, Удирдах зөвлөлийн дарга'
       },
       info: {
         en: 'MS, Carbon Finance, University of Edinburgh Business School',
-        mn: ''
+        mn: 'Англи улсын Эдинбург Их Сургууль, Нүүрстөрөгчийн Санхүүжилт, Магистр'
       }
     },
     {
@@ -25,15 +29,15 @@ export default function About() {
       linkedin: 'https://www.linkedin.com/in/anand-tsog-39105a70/',
       name: {
         en: 'Anand. Ts',
-        mn: ''
+        mn: 'Ц. Ананд'
       },
       position: {
         en: 'Co-founder',
-        mn: ''
+        mn: 'Үндэслэн байгуулагч, Гүйцэтгэх захирал'
       },
       info: {
         en: 'Masters in Business Management, California International University',
-        mn: ''
+        mn: 'АНУ-ын Калифорни Их Сургууль, Бизнесийн Удирдлага, Магистр'
       }
     }
   ]
@@ -112,97 +116,88 @@ export default function About() {
       <div className='w-full md:px-gutter py-64 space-y-64'>
         <div className='w-full lg:flex space-y-16 lg:space-y-0'>
           <div className='lg:w-2-cols-vw lg:mr-gutter'>
-            <p className='text-secondary f-heading-4'>Vision</p>
+            <p className='text-secondary f-heading-4'>
+              {locale === 'en' ? 'Vision' : 'Алсын хараа'}
+            </p>
           </div>
           <div className='md:w-6-cols-vw'>
             <p className='f-body-1'>
-              Our vision is to contribute to the pursuit of a climate-smart and
-              sustainable society by strategically employing a combination of
-              innovative market and non-market instruments firmly grounded in
-              integrity. We aspire to lead the way towards a future where
-              environmental stewardship and social responsibility are paramount,
-              creating a world that thrives on sustainability and resilience.
+              {locale === 'en'
+                ? 'Our vision is to contribute to the pursuit of a climate-smart and sustainable society by strategically employing a combination of innovative market and non-market instruments firmly grounded in integrity. We aspire to lead the way towards a future where environmental stewardship and social responsibility are paramount, creating a world that thrives on sustainability and resilience.'
+                : 'Бидний алсын хараа үндэсний онцлогт нийцсэн, олон улсын шилдэг туршлагад тулгуурласан шинэлэг зах зээлийн болон зах зээлийн бус механизмыг хөгжүүлэх замаар уур амьсгалд ухаалаг, тогтвортой нийгэм, ирээдүйг цогцлооход оршино.'}
             </p>
           </div>
         </div>
         <div className='w-full lg:flex space-y-16 lg:space-y-0'>
           <div className='lg:w-2-cols-vw lg:mr-gutter'>
-            <p className='text-secondary f-heading-4'>Mission</p>
+            <p className='text-secondary f-heading-4'>
+              {locale === 'en' ? 'Mission' : 'Эрхэм зорилго'}
+            </p>
           </div>
           <div className='md:w-6-cols-vw'>
             <p className='f-body-1'>
-              Our mission is to effectively scale our efforts to advance
-              national targets in line with the Paris Agreement. Through
-              strategic partnerships, empowering professional communities,
-              conducting scientific and economic research, and advocating for
-              change, we aim to foster sustainable change while ensuring
-              accountability, equity, and integrity in all our endeavors.
+              {locale === 'en'
+                ? 'Our mission is to effectively scale our efforts to advance national targets in line with the Paris Agreement. Through strategic partnerships, empowering professional communities, conducting scientific and economic research, and advocating for change, we aim to foster sustainable change while ensuring accountability, equity, and integrity in all our endeavors.'
+                : 'Бидний эрхэм зорилго Парисын хэлэлцээрийн хүрээнд үндэсний тодорхойлсон зорилтыг хэрэгжүүлэхэд бодит хувь нэмэр оруулах, үйл ажиллагааныхаа цар хүрээ, үр дүн, хүртээмжийг стратегийн үр дүнтэй түншлэл буюу мэргэжлийн болон судалгаа, сурталчилгааны байгууллага, хувийн хэвшил, орон нутгийн төлөөллүүдтэй хамтран ажиллах замаар тэлэхэд оршино.  Ингэхдээ тэгш эрх, шударга ёсны зарчмыг тууштай баримтална'}
             </p>
           </div>
         </div>
         <div className='w-full lg:flex space-y-16 lg:space-y-0'>
           <div className='lg:w-2-cols-vw lg:mr-gutter'>
-            <p className='text-secondary f-heading-4'>Our story</p>
+            <p className='text-secondary f-heading-4'>
+              {locale === 'en' ? 'Our story' : 'Бидний түүх'}
+            </p>
           </div>
           <div className='md:w-6-cols-vw'>
             <p className='f-body-1'>
-              In the vast and dynamic landscape of Mongolia&pos;s environmental
-              advocacy, OLOLT Center distinguishes itself as a beacon of
-              innovation and impact. Born from a collective passion for
-              combating climate change and promoting sustainable development,
-              the OLOLT Center has emerged as a significant contributor in
-              Mongolia&pos;s climate change sector.
+              {locale === 'en'
+                ? "In the vast and dynamic landscape of Mongolia's environmental advocacy, OLOLT Center distinguishes itself as a beacon of innovation and impact. Born from a collective passion for combating climate change and promoting sustainable development, the OLOLT Center has emerged as a significant contributor in Mongolia's climate change sector."
+                : 'Байгаль орчныг хамгаалж, тогтвортой хөгжлийг  хөгжүүлэх үндэсний хүчин чармайлт өргөн цар хүрээ, олон талыг хамарсан байдаг ба үүнд ОЛОЛТ Төв шинийг эрэлхийлэгч инновацлаг, бодит үр нөлөө бүхий шийдэл, тогтолцооны өөрчлөлтийг санал болгож, хэрэгжүүлдгээрээ онцлог юм.'}
               <br />
               <br />
-              At the heart of OLOLT Center&pos;s mission is a commitment to
-              interdisciplinary collaboration, recognizing that addressing
-              climate change requires a holistic approach that spans across
-              various sectors. From environment and energy to agriculture and
-              ESG initiatives, OLOLT Center&pos;s agenda knows no bounds.
+              {locale === 'en'
+                ? "At the heart of OLOLT Center's mission is a commitment to interdisciplinary collaboration, recognizing that addressing climate change requires a holistic approach that spans across various sectors. From environment and energy to agriculture and ESG initiatives, OLOLT Center's agenda knows no bounds."
+                : 'Уур амьсгалын өөрчлөлтийн асуудал нь салбар дундын, ярвигтай, цогц асуудлуудыг хөндсөн байдаг ба ийм ч шалтгаанаар ОЛОЛТ Төвийн үйл ажиллагаа олон салбарыг: байгаль орчин, ой, эрчим хүч, хөдөө аж ахуй, тээвэр, хог хаягдал гм. хамарсан байдаг.'}
               <br />
               <br />
-              What sets OLOLT Center apart is not just its ambitious goals, but
-              the expertise and dedication of its team, which includes
-              well-respected national experts alongside valued international
-              partners. Together, they bring a wealth of knowledge and
-              experience to the table, making OLOLT Center a force to be
-              reckoned with.
+              {locale === 'en'
+                ? 'What sets OLOLT Center apart is not just its ambitious goals, but the expertise and dedication of its team, which includes well-respected national experts alongside valued international partners. Together, they bring a wealth of knowledge and experience to the table, making OLOLT Center a force to be reckoned with.'
+                : 'Цогц асуудлуудыг гагцхүү олон талын мэдлэг, чадвар,  туршлагатай чадварлаг мэргэжлийн хамт олон гүйцэтгэх боломжтой бөгөөд ОЛОЛТ Төв нь салбартаа онол, практикийн мэдлэг туршлагаараа танигдсан, чадварлаг мэргэжлийн баг хамт олноос бүрддэг.'}
               <br />
               <br />
-              In a series of groundbreaking achievements, OLOLT Center is aiming
-              to establish itself as a key player in Mongolia&pos;s
-              environmental landscape. As the first Mongolian member
-              organization to join the Global Reporting Initiative (GRI), OLOLT
-              Center is aiming to set a precedent for transparency and
-              accountability.
+              <strong>
+                {locale === 'mn' &&
+                  'ОЛОЛТ Төвийн анхдагч болох санал санаачилга'}
+              </strong>
+              <br />
+
+              {locale === 'en'
+                ? "In a series of groundbreaking achievements, OLOLT Center is aiming to establish itself as a key player in Mongolia's environmental landscape. As the first Mongolian member organization to join the Global Reporting Initiative (GRI), OLOLT Center is aiming to set a precedent for transparency and accountability."
+                : 'ОЛОЛТ Төв нь олон улсын GRI санаачилгын анхны монгол гишүүн байгууллага болов. Энэ хүрээнд хариуцлагатай бизнесийг дэмжих, сурталчлах, ил тод тайлагнах тогтолцоог бүрдүүлэх замаар тогтвортой хөгжлийг эрчимжүүлнэ.'}
               <br />
               <br />
-              But our journey doesn&pos;t stop there. With a pioneering spirit,
-              OLOLT Center became the Local Issuer for the I-Track Foundation,
-              marking a significant milestone in the nation&pos;s quest for
-              promoting renewable energy production.
+              {locale === 'en'
+                ? "But our journey doesn't stop there. With a pioneering spirit, OLOLT Center became the Local Issuer for the I-Track Foundation, marking a significant milestone in the nation's quest for promoting renewable energy production"
+                : 'Түүнчлэн тогтвортой хөгжлийг эрчимжүүлж, уур амьсгалын өөрчлөлтийг сааруулахад нүүрстөрөгчийн зах зээлийн механизмыг хэрэгжүүлэх нь ач холбогдолтой гэж үзэн үндэсний анхны сайн дурын Ойн нүүрстөрөгчийн хөтөлбөрийг санаачлав.'}
               <br />
               <br />
-              Perhaps most notably, OLOLT Center has taken on the mantle of
-              being the first professional organization dedicated to carbon
-              market development at the national level, making it a pioneer in
-              developing the domestic voluntary carbon market, particularly in
-              the forest sector. With a firm belief in the transformative
-              potential of carbon markets to catalyze sustainable change, OLOLT
-              Center is at the forefront of shaping a greener, more resilient
-              future for Mongolia.
+              {locale === 'en'
+                ? 'Perhaps most notably, OLOLT Center has taken on the mantle of being the first professional organization dedicated to carbon market development at the national level, making it a pioneer in developing the domestic voluntary carbon market, particularly in the forest sector. With a firm belief in the transformative potential of carbon markets to catalyze sustainable change, OLOLT Center is at the forefront of shaping a greener, more resilient future for Mongolia.'
+                : 'Бидний түүх үргэлжилж байгаа бөгөөд байгаль орчин, эх дэлхий, хүн ард, ирээдүй хойч үеийн аюулгүй байдал, сайн сайхны төлөө өөрсдийн хүсэл, тэмүүлэл, сэтгэл зүтгэлийг тууштай хэрэгжүүлж, улс орон болон дэлхийн чиг хандлага, хүчин чармайлтад бодит хувь нэмэр оруулсаар байх болно.'}
               <br />
               <br />
-              As we continue to write our story, one thing remains clear: our
-              passion, expertise, and relentless pursuit of environmental
-              excellence will continue to inspire change and leave a lasting
-              impact on Mongolia and beyond.
+              {locale === 'en' &&
+                'As we continue to write our story, one thing remains clear: our passion, expertise, and relentless pursuit of environmental excellence will continue to inspire change and leave a lasting impact on Mongolia and beyond.'}
+              <br />
+              <br />
             </p>
           </div>
         </div>
         <div className='w-full lg:flex space-y-16 lg:space-y-0'>
           <div className='lg:w-2-cols-vw lg:mr-gutter'>
-            <p className='text-secondary f-heading-4'>Founders</p>
+            <p className='text-secondary f-heading-4'>
+              {locale === 'en' ? 'Founders' : 'Үндэслэн байгуулагч'}
+            </p>
           </div>
           <div className='md:w-6-cols-vw grid grid-cols-2 gap-gutter'>
             {founders.map((item, index) => (
@@ -211,17 +206,19 @@ export default function About() {
                   <div className='w-full aspect-square relative grayscale'>
                     <Image
                       src={item.photo}
-                      alt={item.name.en}
+                      alt={item.name[locale]}
                       fill
                       className='object-cover object-center'
                     />
                   </div>
                   <div className='mt-32 space-y-16'>
                     <div className='space-y-8'>
-                      <p className='f-subhead-2'>{item.name.en}</p>
-                      <p className='f-body-1'>{item.position.en}</p>
+                      <p className='f-subhead-2'>{item.name[locale]}</p>
+                      <p className='f-body-1'>{item.position[locale]}</p>
                     </div>
-                    <p className='f-caption-1 text-secondary'>{item.info.en}</p>
+                    <p className='f-caption-1 text-secondary'>
+                      {item.info[locale]}
+                    </p>
                     <div className='w-fit'>
                       <a
                         className='cursor-pointer'
@@ -240,7 +237,10 @@ export default function About() {
         </div>
         <div className='w-full lg:flex space-y-16 lg:space-y-0'>
           <div className='lg:w-2-cols-vw lg:mr-gutter'>
-            <p className='text-secondary f-heading-4'>Our approach</p>
+            <p className='text-secondary f-heading-4'>
+              {' '}
+              {locale === 'en' ? 'Our approuch' : 'Арга барил'}
+            </p>
           </div>
           <div className='md:w-6-cols-vw space-y-40'>
             {approach.map((item, index) => (
@@ -256,8 +256,8 @@ export default function About() {
                   </div>
                 </div>
                 <div className='w-3-cols-vw md:w-5-cols-vw py-10 space-y-16'>
-                  <p className='f-subhead-2'>{item.title.en}</p>
-                  <p className='f-body-1'>{item.text.en}</p>
+                  <p className='f-subhead-2'>{item.title[locale]}</p>
+                  <p className='f-body-1'>{item.text[locale]}</p>
                 </div>
               </div>
             ))}

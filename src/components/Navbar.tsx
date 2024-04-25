@@ -11,7 +11,11 @@ import { AnimatePresence, motion } from 'framer-motion'
 import Navlink from './Navlink'
 import Locale from './Locale'
 
+import { useCurrentLocale } from '@/locale/client'
+
 export default function Navbar() {
+  const locale = useCurrentLocale()
+
   const [open, setOpen] = useState(false)
   const [scrollUp, setScrollUp] = useState(true)
 
@@ -33,47 +37,47 @@ export default function Navbar() {
   const links = [
     {
       en: 'About us',
-      mn: '',
+      mn: 'Бидний тухай',
       link: '/about'
     },
     {
       en: 'News & Insights',
-      mn: '',
+      mn: 'Мэдээ, мэдээлэл',
       link: '/news'
     },
     {
       en: 'Contact us',
-      mn: '',
+      mn: 'Бидэнтэй холбогдох',
       link: '/contact'
     },
     {
       en: 'Climate change',
-      mn: '',
+      mn: 'Уур амьсгалын өөрчлөлт',
       link: '/climate-change'
     },
     {
       en: 'Energy Certification',
-      mn: '',
+      mn: 'Эрчим хүчний гэрчилгээ',
       link: '/energy-certification'
     },
     {
       en: 'Carbon Market',
-      mn: '',
+      mn: 'Нүүрстөрөгчийн зах зээл',
       link: '/carbon-market'
     },
     {
       en: 'ESG',
-      mn: '',
+      mn: 'БНЗ',
       link: '/esg'
     },
     {
       en: 'GHG Accounting',
-      mn: '',
+      mn: 'Хүлэмжийн хийн тооллого',
       link: '/ghg'
     },
     {
       en: 'Academy',
-      mn: '',
+      mn: 'Aкадеми',
       link: '/academy'
     }
   ]
@@ -121,16 +125,20 @@ export default function Navbar() {
           <Link href='/'>
             <Image
               className='block lg:hidden'
-              src='/logo/logo-en-small.svg'
+              src={
+                locale === 'en'
+                  ? '/logo/logo-en-small.svg'
+                  : '/logo/logo-mn-small.svg'
+              }
               height={25}
               width={96}
               alt='logo'
             />
             <Image
               className='hidden lg:block'
-              src='/logo/logo-en.svg'
+              src={locale === 'en' ? '/logo/logo-en.svg' : '/logo/logo-mn.svg'}
               height={60}
-              width={156}
+              width={locale === 'en' ? 156 : 212}
               alt='logo'
             />
           </Link>
@@ -156,7 +164,11 @@ export default function Navbar() {
           <div className='h-48 flex justify-end'>
             {links.slice(0, 3).map((item, index) => (
               <Link href={item.link} key={index} className='h-full'>
-                <Navlink label={item.en} active={pathname === item.link} top />
+                <Navlink
+                  label={item[locale]}
+                  active={pathname === item.link}
+                  top
+                />
               </Link>
             ))}
             <button>
@@ -178,7 +190,7 @@ export default function Navbar() {
           <div className='h-48 flex justify-end'>
             {links.slice(3, 9).map((item, index) => (
               <Link href={item.link} key={index} className='h-full'>
-                <Navlink label={item.en} active={pathname === item.link} />
+                <Navlink label={item[locale]} active={pathname === item.link} />
               </Link>
             ))}
           </div>
@@ -203,7 +215,7 @@ export default function Navbar() {
                   >
                     <Link href={item.link}>
                       <div className='container py-16'>
-                        <p>{item.en}</p>
+                        <p>{item[locale]}</p>
                       </div>
                     </Link>
                   </div>
@@ -218,7 +230,7 @@ export default function Navbar() {
                   >
                     <Link href={item.link}>
                       <div className='container py-16'>
-                        <p>{item.en}</p>
+                        <p>{item[locale]}</p>
                       </div>
                     </Link>
                   </div>
