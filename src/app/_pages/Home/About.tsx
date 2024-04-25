@@ -170,7 +170,10 @@ export default function About() {
 
                   <div className='w-fit'>
                     <Link href={item.link}>
-                      <BaseLink label='See more' icon />
+                      <BaseLink
+                        label={locale === 'en' ? 'See more' : 'Дэлгэрэнгүй'}
+                        icon
+                      />
                     </Link>
                   </div>
                 </div>
