@@ -31,8 +31,8 @@ export default function Accordion({ item }: { item: ItemType }) {
                 xmlns='http://www.w3.org/2000/svg'
                 className={
                   active === index
-                    ? 'rotate-180 transition-transform'
-                    : 'rotate-0 transition-transform'
+                    ? 'rotate-0 transition-transform'
+                    : 'rotate-180 transition-transform'
                 }
               >
                 <path

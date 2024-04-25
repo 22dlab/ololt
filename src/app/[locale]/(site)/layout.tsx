@@ -47,10 +47,10 @@ export default function RootLayout({
       </head>
       <body>
         <I18nProviderClient locale={locale}>
-          <Navbar />
+          {/* <Navbar /> */}
           {children}
-          <Devtool />
-          <Footer />
+          {/* <Devtool /> */}
+          {/* <Footer /> */}
         </I18nProviderClient>
       </body>
     </html>
