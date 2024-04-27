@@ -1,8 +1,8 @@
 import { defineType, defineField } from 'sanity'
 
-export const listItem = defineType({
-  title: 'List Item',
-  name: 'listItem',
+export const threeStep = defineType({
+  title: 'Three Step Component',
+  name: 'threeStep',
   type: 'object',
   preview: {
     select: {
@@ -19,20 +19,21 @@ export const listItem = defineType({
       title: 'Component Items',
       name: 'items',
       type: 'array',
+      validation: (Rule) => Rule.max(3),
       of: [
         {
           type: 'object',
-          preview: { select: { title: 'label.en' } },
+          preview: { select: { title: 'title.en' } },
           fields: [
             defineField({
-              title: 'Label',
-              name: 'label',
+              title: 'Title',
+              name: 'title',
               type: 'localeString'
             }),
             defineField({
-              title: 'Link',
-              name: 'link',
-              type: 'url'
+              title: 'Body',
+              name: 'body',
+              type: 'textBlock'
             })
           ]
         }

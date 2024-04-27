@@ -15,10 +15,11 @@ import { logo } from './components/logo'
 import { iconCard } from './components/iconCard'
 import { serviceCard } from './components/serviceCard'
 import { statCard } from './components/statCard'
-import { listItem } from './components/listItem'
+import { listImage } from './components/listImage'
+import { threeFeature } from './components/threeFeature'
+import { threeStep } from './components/threeStep'
 import { accordion } from './components/accordion'
 import { fileDownlaod } from './components/fileDownload'
-import { cta } from './components/cta'
 
 import { localeString } from './components/localeString'
 
@@ -40,10 +41,11 @@ export const schemaTypes = [
   iconCard,
   serviceCard,
   statCard,
-  listItem,
+  listImage,
+  threeFeature,
+  threeStep,
   accordion,
   fileDownlaod,
-  cta,
 
   localeString
 ]

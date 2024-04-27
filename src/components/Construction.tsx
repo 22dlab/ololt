@@ -399,7 +399,7 @@ export function Construction() {
   ]
 
   return (
-    <div className='flex flex-row items-center justify-center h-screen bg-black w-full'>
+    <div className='flex flex-row items-center justify-center h-screen bg-black w-full relative z-[100]'>
       <div className='container relative overflow-hidden flex flex-col justify-between h-full py-[144px] md:py-96'>
         <motion.div
           initial={{

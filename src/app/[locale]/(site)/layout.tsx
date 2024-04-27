@@ -50,7 +50,7 @@ export default function RootLayout({
       <body>
         <Analytics />
         <I18nProviderClient locale={locale}>
-          {/* <Navbar /> */}
+          <Navbar />
           {children}
           {/* <Devtool /> */}
           {/* <Footer /> */}

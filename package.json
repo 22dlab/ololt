@@ -32,6 +32,7 @@
     "react-share": "^5.1.0",
     "react-websitecarbon-badge": "^1.0.6",
     "sanity": "^3.36.4",
+    "styled-components": "^6",
     "tailwind-merge": "^2.3.0",
     "three": "^0.163.0",
     "three-globe": "^2.31.0"

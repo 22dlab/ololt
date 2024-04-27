@@ -1,8 +1,8 @@
 import { defineType, defineField } from 'sanity'
 
-export const accordion = defineType({
-  title: 'Accordion',
-  name: 'accordion',
+export const listImage = defineType({
+  title: 'List Image',
+  name: 'listImage',
   type: 'object',
   preview: {
     select: {
@@ -22,17 +22,17 @@ export const accordion = defineType({
       of: [
         {
           type: 'object',
-          preview: { select: { title: 'question.en' } },
+          preview: { select: { title: 'label.en', media: 'photo' } },
           fields: [
             defineField({
-              title: 'Question',
-              name: 'question',
+              title: 'Label',
+              name: 'label',
               type: 'localeString'
             }),
             defineField({
-              title: 'Answer',
-              name: 'answer',
-              type: 'textBlock'
+              title: 'Photo',
+              name: 'photo',
+              type: 'image'
             })
           ]
         }

@@ -32,9 +32,11 @@ export default defineType({
         { type: 'iconCard' },
         { type: 'serviceCard' },
         { type: 'statCard' },
+        { type: 'threeFeature' },
+        { type: 'threeStep' },
+        { type: 'listImage' },
         { type: 'accordion' },
-        { type: 'fileDownlaod' },
-        { type: 'cta' }
+        { type: 'fileDownlaod' }
       ]
     })
   ]
