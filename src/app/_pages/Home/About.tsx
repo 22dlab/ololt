@@ -121,7 +121,7 @@ export default function About() {
 
   return (
     <>
-      <div className='container md:px-1-cols-vw lg:px-2-cols-vw'>
+      <div className='container md:px-1-cols-vw lg:px-2-cols-vw mt-48'>
         <div className='w-full md:px-gutter py-64 space-y-64'>
           <div className='w-full md:flex space-y-16 md:space-y-0'>
             <div className='w-2-cols-vw mr-gutter'>

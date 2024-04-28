@@ -42,7 +42,7 @@ export default function Footer() {
     },
     {
       en: 'ESG',
-      mn: 'БНЗ',
+      mn: 'БОНЗ',
       link: '/esg'
     },
     {

@@ -86,6 +86,7 @@ export function Globe({ globeConfig, data }: WorldProps) {
     emissiveIntensity: 0.1,
     shininess: 0.9,
     arcTime: 2000,
+    initialPosition: { lat: 116.71, lng: 49.83 },
     arcLength: 0.9,
     rings: 1,
     maxRings: 3,
@@ -247,8 +248,12 @@ export function World(props: WorldProps) {
   const { globeConfig } = props
   const scene = new Scene()
   scene.fog = new Fog(0xffffff, 400, 2000)
+
+  const camera = new PerspectiveCamera(50, aspect, 180, 1800)
+  camera.position.set(7500, 5000, cameraZ)
+
   return (
-    <Canvas scene={scene} camera={new PerspectiveCamera(50, aspect, 180, 1800)}>
+    <Canvas scene={scene} camera={camera}>
       <WebGLRendererConfig />
       <ambientLight color={globeConfig.ambientLight} intensity={0.6} />
       <directionalLight
@@ -270,8 +275,8 @@ export function World(props: WorldProps) {
         enableZoom={false}
         minDistance={cameraZ}
         maxDistance={cameraZ}
-        autoRotateSpeed={1}
-        autoRotate={true}
+        autoRotateSpeed={globeConfig.autoRotateSpeed}
+        autoRotate={globeConfig.autoRotate}
         minPolarAngle={Math.PI / 3.5}
         maxPolarAngle={Math.PI - Math.PI / 3}
       />
