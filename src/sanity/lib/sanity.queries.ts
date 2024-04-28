@@ -32,7 +32,9 @@ const Content = `
       label,
       value,
       question,
-      answer
+      answer,
+      title,
+      body
     }
   }
 `

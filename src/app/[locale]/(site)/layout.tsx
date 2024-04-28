@@ -52,7 +52,7 @@ export default function RootLayout({
         <I18nProviderClient locale={locale}>
           <Navbar />
           {children}
-          {/* <Devtool /> */}
+          <Devtool />
           {/* <Footer /> */}
         </I18nProviderClient>
       </body>

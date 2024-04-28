@@ -4,12 +4,25 @@ import { ItemType } from '@/type'
 
 import { useState } from 'react'
 
+import { PortableText, PortableTextComponents } from 'next-sanity'
+
 export default function Accordion({ item }: { item: ItemType }) {
   const [active, setActive] = useState(-1)
 
   const handleClick = (index: number) => {
     if (active === index) setActive(-1)
     else setActive(index)
+  }
+
+  const components: PortableTextComponents = {
+    block: {
+      h4: ({ children }) => <h4 className='f-heading-4'>{children}</h4>
+    },
+    list: {
+      bullet: ({ children }) => (
+        <ul className='list-disc list-outside ml-24'>{children}</ul>
+      )
+    }
   }
 
   return (
@@ -31,8 +44,8 @@ export default function Accordion({ item }: { item: ItemType }) {
                 xmlns='http://www.w3.org/2000/svg'
                 className={
                   active === index
-                    ? 'rotate-0 transition-transform'
-                    : 'rotate-180 transition-transform'
+                    ? 'rotate-0 transition-transform flex-shrink-0'
+                    : 'rotate-180 transition-transform flex-shrink-0'
                 }
               >
                 <path
@@ -46,7 +59,9 @@ export default function Accordion({ item }: { item: ItemType }) {
                 active === index ? 'h-auto block' : 'h-0 hidden'
               } overflow-hidden transition-transform w-full p-16`}
             >
-              <p className='f-body-1 text-secondary'>{x.answer?.en}</p>
+              <div className='f-body-1 text-secondary'>
+                <PortableText value={x.answer?.en} components={components} />
+              </div>
             </div>
           </div>
         ))}

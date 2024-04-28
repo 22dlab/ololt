@@ -9,12 +9,37 @@ import TextBlock from './TextBlock'
 import IconCard from './IconCard'
 import ServiceCard from './ServiceCard'
 import StatCard from './StatCard'
+import ThreeFeature from './ThreeFeature'
+import ThreeStep from './ThreeStep'
 import Accordion from './Accordion'
 import Photo from './Photo'
 import Logo from './Logo'
 
 export default function Content({ content }: { content: ContentType[] }) {
-  const refs = useRef<Array<HTMLDivElement | null>>([])
+  const [currentInView, setCurrentInView] = useState<number | null>(null)
+
+  const isInView = (element: HTMLElement) => {
+    const rect = element.getBoundingClientRect()
+    return rect.top < window.innerHeight && rect.bottom >= 0
+  }
+
+  const handleScroll = () => {
+    const elements = document.querySelectorAll('.space-y-60')
+    elements.forEach((element, index) => {
+      if (isInView(element as HTMLElement)) {
+        setCurrentInView(index)
+      }
+    })
+  }
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      window.scroll({ top: 1 })
+      window.scroll({ top: 0 })
+      window.addEventListener('scroll', handleScroll)
+      return () => window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
 
   return (
     <div className='container py-96 px-0 md:px-1-cols-vw lg:px-0'>
@@ -26,7 +51,12 @@ export default function Content({ content }: { content: ContentType[] }) {
               {content.slice(1, content.length).map((item, index) => (
                 <div
                   key={index}
-                  className={`px-16 py-12 f-ui-1 border-l-4 box-border border-primary`}
+                  className={`px-16 py-12 f-ui-1 border-l-4 box-border transition-all delay-150 duration-0 ${
+                    index + 1 === currentInView ||
+                    (currentInView === 0 && index === 0)
+                      ? 'border-secondary'
+                      : 'border-primary'
+                  }`}
                 >
                   <a href={`#${item.name.en.toLowerCase()}`}>{item.name.en}</a>
                 </div>
@@ -39,9 +69,6 @@ export default function Content({ content }: { content: ContentType[] }) {
                 <div
                   key={index}
                   id={x.name.en.toLowerCase()}
-                  ref={(element) => {
-                    refs.current.push(element)
-                  }}
                   className='space-y-60'
                 >
                   {index !== 0 && (
@@ -63,6 +90,12 @@ export default function Content({ content }: { content: ContentType[] }) {
                         }
                         case 'statCard': {
                           return <StatCard key={index} item={item} />
+                        }
+                        case 'threeFeature': {
+                          return <ThreeFeature key={index} item={item} />
+                        }
+                        case 'threeStep': {
+                          return <ThreeStep key={index} item={item} />
                         }
                         case 'accordion': {
                           return <Accordion key={index} item={item} />
