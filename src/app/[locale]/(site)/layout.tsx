@@ -53,7 +53,7 @@ export default function RootLayout({
           <Navbar />
           {children}
           <Devtool />
-          {/* <Footer /> */}
+          <Footer />
         </I18nProviderClient>
       </body>
     </html>
