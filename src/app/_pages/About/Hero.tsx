@@ -1,17 +1,18 @@
 import { getCurrentLocale } from '@/locale/server'
 
+import Image from 'next/image'
+
 export default function Hero() {
   const locale = getCurrentLocale()
 
   return (
-    <div className='w-full h-[400px] relative'>
-      <div className='w-full h-full bg-black' />
-      {/* <Image
-        src='/misc/about-hero.png'
+    <div className='w-full h-[400px] relative bg-gradient-to-b from-[#00000000] to-[#0000004D]'>
+      <Image
+        src='/misc/about-hero.jpeg'
         className='object-cover object-center'
         fill
-        alt='map'
-      /> */}
+        alt='hero'
+      />
       {/* <div className='absolute bottom-full translate-y-full pt-72 lg:pt-0 lg:bottom-72 lg:translate-y-0 w-full'>
         <div className='container'>
           <div className='md:w-5-cols-vw lg:w-6-cols-vw'>

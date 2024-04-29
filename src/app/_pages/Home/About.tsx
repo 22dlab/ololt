@@ -87,7 +87,7 @@ export default function About() {
   const cards = [
     {
       image: '/misc/card.png',
-      logo: '/partners/8.png',
+      logo: '/misc/i-track.png',
       title: {
         en: 'OLOLT Center now issues Renewable Energy Certificate (I-REC) in Mongolia, adhering to the I-TRACK Standard Foundation',
         mn: 'ОЛОЛТ Төв нь I-TRACK Сангийн ‘I-REC (E)’ стандартын дагуу сэргээгдэх эрчим хүчний гэрчилгээ олгож эхлэв.'
