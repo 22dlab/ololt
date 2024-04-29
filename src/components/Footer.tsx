@@ -85,7 +85,7 @@ export default function Footer() {
           <Link href='/'>
             <Image
               src={
-                locale === 'en'
+                locale === 'mn'
                   ? '/logo/logo-en-dark.svg'
                   : '/logo/logo-mn-dark.svg'
               }
