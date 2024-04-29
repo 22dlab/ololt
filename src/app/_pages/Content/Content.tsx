@@ -64,9 +64,7 @@ export default function Content({ content }: { content: ContentType[] }) {
                       : 'border-primary'
                   }`}
                 >
-                  <a href={`#${item.name.en.toLowerCase()}`}>
-                    {item.name[locale]}
-                  </a>
+                  <a href={`#${item.name.en.toLowerCase()}`}>{item.name.en}</a>
                 </div>
               ))}
             </div>
@@ -83,8 +81,8 @@ export default function Content({ content }: { content: ContentType[] }) {
               >
                 <p className='truncate'>
                   {currentInView !== 0
-                    ? content[currentInView!].name[locale]
-                    : content[1].name[locale]}
+                    ? content[currentInView!].name.en
+                    : content[1].name.en}
                 </p>
                 <svg
                   width='20'
@@ -121,7 +119,7 @@ export default function Content({ content }: { content: ContentType[] }) {
                           onClick={() => setOpen(false)}
                           href={`#${item.name.en.toLowerCase()}`}
                         >
-                          {item.name[locale]}
+                          {item.name.en}
                         </a>
                       </div>
                     ))}
@@ -140,7 +138,7 @@ export default function Content({ content }: { content: ContentType[] }) {
                 >
                   {index !== 0 && (
                     <div className='f-heading-1 pt-48 border-t border-primary w-4-cols md:w-6-cols-vw'>
-                      <p>{x.name[locale]}</p>
+                      <p>{x.name.en}</p>
                     </div>
                   )}
                   {x.components !== null &&

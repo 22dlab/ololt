@@ -235,7 +235,7 @@ export default function News({
               <p className='f-heading-1'>{items[3][locale]}</p>
               {videos.map((item, index) => (
                 <div key={index} className='lg:w-6-cols-vw space-y-24'>
-                  <p className='f-body-1'>{item.caption[locale]}</p>
+                  {/* <p className='f-body-1'>{item.caption[locale]}</p> */}
                   <div className='w-full aspect-video'>
                     <ReactPlayer url={item.link} width='100%' height='100%' />
                   </div>
