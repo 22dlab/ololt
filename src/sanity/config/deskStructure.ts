@@ -63,6 +63,7 @@ export const deskStructure = (
         context
       }),
       S.divider(),
+      S.documentTypeListItem('partner').title('Partners').icon(UsersIcon),
       S.documentTypeListItem('news').title('News').icon(BlockContentIcon),
       S.documentTypeListItem('video').title('Videos').icon(PlayIcon)
       // S.listItem()

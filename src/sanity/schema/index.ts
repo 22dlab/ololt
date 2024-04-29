@@ -5,6 +5,7 @@ import esg from './documents/esg'
 import ghg from './documents/ghg'
 import academy from './documents/academy'
 
+import partner from './documents/partner'
 import news from './documents/news'
 import video from './documents/video'
 
@@ -31,6 +32,7 @@ export const schemaTypes = [
   ghg,
   academy,
 
+  partner,
   news,
   video,
 
