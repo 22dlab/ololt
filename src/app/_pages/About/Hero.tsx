@@ -12,7 +12,7 @@ export default function Hero() {
         fill
         alt='map'
       /> */}
-      <div className='absolute bottom-full translate-y-full pt-72 lg:pt-0 lg:bottom-72 lg:translate-y-0 w-full'>
+      {/* <div className='absolute bottom-full translate-y-full pt-72 lg:pt-0 lg:bottom-72 lg:translate-y-0 w-full'>
         <div className='container'>
           <div className='md:w-5-cols-vw lg:w-6-cols-vw'>
             <p className='text-inverse f-display-3'>
@@ -25,11 +25,11 @@ export default function Hero() {
             </p>
           </div>
         </div>
-      </div>
+      </div> */}
       <div className='absolute bottom-72 w-full'>
-        <div className='container flex lg:justify-end'>
-          <div className='lg:w-4-cols-vw'>
-            <p className='text-inverse f-body-1'>
+        <div className='container flex'>
+          <div className='lg:w-8-cols-vw'>
+            <p className='text-inverse f-subhead-1'>
               {locale === 'en'
                 ? 'At OLOLT Center, we are committed to Driving Timely Climate Actions in collaboration with state and non-state national and international stakeholders, mobilizing resources effectively, and upholding principles of fairness, inclusivity, transparency, and high integrity.'
                 : 'ОЛОЛТ Төв нь ёс зүй, шударга ёс, хүртээмжтэй, ил тод зарчмыг эрхэмлэн үндэсний болон олон улсын олон талуудтай хамтран, нийгмийн сайн сайхны төлөө уур амьсгалын өөрчлөлтийг сааруулах үйлсэд бодит хувь нэмэр оруулах эрхэм зорилготой мэргэжлийн төрийн бус байгууллага юм.'}
