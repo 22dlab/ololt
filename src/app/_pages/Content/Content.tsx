@@ -1,7 +1,7 @@
 'use client'
 
-import { useRef, useEffect, useState } from 'react'
-import { useInView } from 'framer-motion'
+import { useEffect, useState } from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
 
 import { ContentType } from '@/type'
 
@@ -15,8 +15,14 @@ import Accordion from './Accordion'
 import Photo from './Photo'
 import Logo from './Logo'
 
+import { useCurrentLocale } from '@/locale/client'
+
 export default function Content({ content }: { content: ContentType[] }) {
-  const [currentInView, setCurrentInView] = useState<number | null>(null)
+  const locale = useCurrentLocale()
+
+  const [currentInView, setCurrentInView] = useState<number>(0)
+  const [scrollUp, setScrollUp] = useState(true)
+  const [open, setOpen] = useState(false)
 
   const isInView = (element: HTMLElement) => {
     const rect = element.getBoundingClientRect()
@@ -42,10 +48,10 @@ export default function Content({ content }: { content: ContentType[] }) {
   }, [])
 
   return (
-    <div className='container py-96 px-0 md:px-1-cols-vw lg:px-0'>
+    <div className='container px-0 md:px-1-cols-vw lg:px-0'>
       <div className='w-full px-0 md:px-gutter lg:px-0'>
         <div className='w-full lg:flex relative h-auto'>
-          <div className='hidden lg:block w-3-cols-vw mr-gutter sticky top-96 self-start'>
+          <div className='hidden lg:block w-3-cols-vw mr-gutter sticky mt-96 top-96 self-start'>
             <p className='f-heading-5'>Specialized Areas</p>
             <div className='mt-32'>
               {content.slice(1, content.length).map((item, index) => (
@@ -58,12 +64,73 @@ export default function Content({ content }: { content: ContentType[] }) {
                       : 'border-primary'
                   }`}
                 >
-                  <a href={`#${item.name.en.toLowerCase()}`}>{item.name.en}</a>
+                  <a href={`#${item.name.en.toLowerCase()}`}>
+                    {item.name[locale]}
+                  </a>
                 </div>
               ))}
             </div>
           </div>
-          <div className='lg:w-9-cols-vw space-y-48'>
+          <div
+            className={`w-full block lg:hidden sticky left-0 transition-all z-[5]  ${
+              scrollUp ? 'top-0' : 'top-0'
+            }`}
+          >
+            <div className='breakout relative'>
+              <div
+                className='flex items-center justify-between w-full px-margin py-16 bg-secondary border-b border-primary'
+                onClick={() => setOpen(!open)}
+              >
+                <p className='truncate'>
+                  {currentInView !== 0
+                    ? content[currentInView!].name[locale]
+                    : content[1].name[locale]}
+                </p>
+                <svg
+                  width='20'
+                  height='20'
+                  viewBox='0 0 20 20'
+                  fill='none'
+                  xmlns='http://www.w3.org/2000/svg'
+                  className='flex-shrink-none'
+                >
+                  <path d='M17.5 3.75H2.5V5H17.5V3.75Z' fill='#ec008c' />
+                  <path d='M17.5 15H2.5V16.25H17.5V15Z' fill='#ec008c' />
+                  <path d='M17.5 7.5H2.5V8.75H17.5V7.5Z' fill='#ec008c' />
+                  <path d='M17.5 11.25H2.5V12.5H17.5V11.25Z' fill='#ec008c' />
+                </svg>
+              </div>
+              <AnimatePresence mode='wait'>
+                {open && (
+                  <motion.div
+                    initial={{ clipPath: 'polygon(0 0, 100% 0, 100% 0, 0 0)' }}
+                    animate={{
+                      clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)'
+                    }}
+                    exit={{ clipPath: 'polygon(0 0, 100% 0, 100% 0, 0 0)' }}
+                    transition={{ duration: '0.5', ease: 'easeOut' }}
+                    className='w-full bg-primary absolute top-[57px]'
+                  >
+                    {content.slice(1, content.length).map((item, index) => (
+                      <div
+                        key={index}
+                        className='text-secondary py-[15px] border-b border-primary'
+                      >
+                        <a
+                          className='px-margin truncate overflow-hidden'
+                          onClick={() => setOpen(false)}
+                          href={`#${item.name.en.toLowerCase()}`}
+                        >
+                          {item.name[locale]}
+                        </a>
+                      </div>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          </div>
+          <div className='lg:w-9-cols-vw space-y-48 py-96'>
             {content.map((x, index) => {
               return (
                 <div
@@ -73,7 +140,7 @@ export default function Content({ content }: { content: ContentType[] }) {
                 >
                   {index !== 0 && (
                     <div className='f-heading-1 pt-48 border-t border-primary w-4-cols md:w-6-cols-vw'>
-                      <p>{x.name.en}</p>
+                      <p>{x.name[locale]}</p>
                     </div>
                   )}
                   {x.components !== null &&
