@@ -12,6 +12,7 @@ import StatCard from './StatCard'
 import ThreeFeature from './ThreeFeature'
 import ThreeStep from './ThreeStep'
 import Accordion from './Accordion'
+import ListImage from './ListImage'
 import Photo from './Photo'
 import Logo from './Logo'
 
@@ -164,6 +165,9 @@ export default function Content({ content }: { content: ContentType[] }) {
                         }
                         case 'accordion': {
                           return <Accordion key={index} item={item} />
+                        }
+                        case 'listImage': {
+                          return <ListImage key={index} item={item} />
                         }
                         case 'photo': {
                           return <Photo key={index} item={item} />

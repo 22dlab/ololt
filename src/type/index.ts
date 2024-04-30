@@ -26,6 +26,7 @@ export type ItemType = {
   items?: [
     {
       icon?: ImageType
+      photo?: ImageType
       label?: LocaleString
       title?: LocaleString
       value?: LocaleString

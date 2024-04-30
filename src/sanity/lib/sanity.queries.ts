@@ -28,6 +28,9 @@ const Content = `
       icon {
         ${Image}
       },
+      photo {
+        ${Image}
+      },
       link,
       label,
       value,

@@ -22,7 +22,7 @@ export default function ThreeFeature({ item }: { item: ItemType }) {
       <div className='grid grid-cols-1 lg:grid-cols-3 gap-x-gutter gap-y-32'>
         {item.items?.map((x, index) => (
           <div key={index} className='space-y-16 block md:flex lg:block'>
-            <div className='w-[100px] md:w-1-cols-vw mr-gutter lg:w-[100px] aspect-square relative'>
+            <div className='w-[40px] md:w-1-cols-vw mr-gutter lg:w-[40px] aspect-square relative'>
               <SanityImage
                 className='object-contain object-center'
                 image={x.icon!}
