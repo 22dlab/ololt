@@ -11,9 +11,9 @@ import { Metadata } from 'next'
 export const revalidate = 60
 
 export const metadata: Metadata = {
-  title: 'Catalyzing Sustainability: News, Research & Thought Leadership',
+  title: 'Driving Climate Action with Integrity & Innovative Solutions',
   description:
-    'Explore OLOLT Center’s news and insights section for the latest updates, expert analysis, research publications, and thought leadership articles on critical topics such as climate change mitigation, carbon markets, energy transition, ESG integration, and sustainable development in Mongolia. Stay informed and gain valuable perspectives from our team of experienced professionals.',
+    'OLOLT Center is a leading Mongolian organization pioneering climate change mitigation and sustainable development. Our expertise spans risk assessments, policy planning, climate finance, project implementation, carbon markets, energy certification, ESG integration, GHG accounting, and capacity building. With a commitment to transparency, research-driven approaches, and global best practices, we empower stakeholders through innovative solutions for a sustainable future.',
   openGraph: {
     title: 'Climate Change & Carbon Market Development Center',
     url: 'https://cccmdc.mn',
