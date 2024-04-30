@@ -40,8 +40,8 @@ export default function Content({ content }: { content: ContentType[] }) {
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      window.scroll({ top: 1 })
-      window.scroll({ top: 0 })
+      window.scrollBy({ top: 1 })
+      window.scrollBy({ top: 0 })
       window.addEventListener('scroll', handleScroll)
       return () => window.removeEventListener('scroll', handleScroll)
     }

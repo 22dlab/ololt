@@ -86,6 +86,7 @@ export default function About() {
 
   const cards = [
     {
+      link: '/energy-certification#i-rec (e) certification',
       image: '/misc/card.png',
       logo: '/misc/i-track.png',
       title: {
@@ -102,6 +103,7 @@ export default function About() {
       }
     },
     {
+      link: '/news/ololt-center-joined-GRI-community',
       image: '/misc/card-2.png',
       logo: '/partners/5.png',
       title: {
@@ -220,7 +222,7 @@ export default function About() {
                   <p className='f-heading-4'>{item.title[locale]}</p>
                   <p className='text-secondary f-ui-1'>{item.text[locale]}</p>
                   <div className='w-fit'>
-                    <Link href='/'>
+                    <Link href={item.link}>
                       <BaseButton
                         type='secondary'
                         icon

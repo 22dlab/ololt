@@ -14,7 +14,7 @@ export default function Videos({ videos }: { videos: VideoType[] }) {
 
   return (
     <div className='w-full bg-[#21272A]'>
-      <div className='container py-32 md:py-64 space-y-24 md:space-y-40'>
+      <div className='container py-32 md:py-64 space-y-0 md:space-y-0'>
         <div className='w-full grid grid-cols-1 md:grid-cols-2 gap-gutter'>
           {videos.map((item, index) => (
             <div key={index} className='w-full aspect-video'>
@@ -22,7 +22,7 @@ export default function Videos({ videos }: { videos: VideoType[] }) {
             </div>
           ))}
         </div>
-        <div className='flex justify-center items-center'>
+        {/* <div className='flex justify-center items-center'>
           <div className='w-fit'>
             <Link href='/news'>
               <BaseButton
@@ -32,7 +32,7 @@ export default function Videos({ videos }: { videos: VideoType[] }) {
               />
             </Link>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   )

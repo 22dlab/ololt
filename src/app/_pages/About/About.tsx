@@ -165,11 +165,13 @@ export default function About() {
                 : 'Цогц асуудлуудыг гагцхүү олон талын мэдлэг, чадвар,  туршлагатай чадварлаг мэргэжлийн хамт олон гүйцэтгэх боломжтой бөгөөд ОЛОЛТ Төв нь салбартаа онол, практикийн мэдлэг туршлагаараа танигдсан, чадварлаг мэргэжлийн баг хамт олноос бүрддэг.'}
               <br />
               <br />
-              <strong>
-                {locale === 'mn' &&
-                  'ОЛОЛТ Төвийн анхдагч болох санал санаачилга'}
-              </strong>
-              <br />
+              {locale === 'mn' && (
+                <>
+                  <strong>ОЛОЛТ Төвийн анхдагч болох санал санаачилга</strong>
+                  <br />
+                  <br />
+                </>
+              )}
 
               {locale === 'en'
                 ? "In a series of groundbreaking achievements, OLOLT Center is aiming to establish itself as a key player in Mongolia's environmental landscape. As the first Mongolian member organization to join the Global Reporting Initiative (GRI), OLOLT Center is aiming to set a precedent for transparency and accountability."

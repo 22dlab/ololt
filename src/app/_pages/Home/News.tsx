@@ -16,32 +16,31 @@ export default function News({ news }: { news: NewsType[] }) {
     <div className='container py-32 md:py-64 space-y-24 md:space-y-40'>
       <div className='w-full grid md:hidden lg:grid grid-cols-1 md:grid-cols-4 gap-gutter'>
         {news.map((item, index) => (
-          <div
-            key={index}
-            className='pl-16 border-l border-primary flex md:flex-col justify-between'
-          >
-            <div className='w-2-cols-vw md:w-full'>
-              <div className='w-full aspect-video relative'>
-                <SanityImage
-                  image={item.thumbnail}
-                  className='object-cover object-center'
-                  alt='thumbnail'
-                />
+          <Link href={`/news/${item.slug?.current}`} key={index}>
+            <div className='pl-16 border-l border-primary flex md:flex-col justify-between'>
+              <div className='w-2-cols-vw md:w-full'>
+                <div className='w-full aspect-video relative'>
+                  <SanityImage
+                    image={item.thumbnail}
+                    className='object-cover object-center'
+                    alt='thumbnail'
+                  />
+                </div>
+                <p className='hidden md:block f-body-1 mt-12 line-clamp-3'>
+                  {item.title}
+                </p>
+                <p className='hidden md:block f-caption-1 text-secondary mt-8'>
+                  {getType(item.type, locale)}
+                </p>
               </div>
-              <p className='hidden md:block f-body-1 mt-12 line-clamp-3'>
-                {item.title}
-              </p>
-              <p className='hidden md:block f-caption-1 text-secondary mt-8'>
-                {getType(item.type, locale)}
-              </p>
+              <div className='w-2-cols-vw md:w-full flex flex-col justify-between'>
+                <p className='block md:hidden f-body-1 mt-12 line-clamp-2'>
+                  {item.title}
+                </p>
+                <p className='f-tag-1 text-secondary mt-48'>{item.date}</p>
+              </div>
             </div>
-            <div className='w-2-cols-vw md:w-full flex flex-col justify-between'>
-              <p className='block md:hidden f-body-1 mt-12 line-clamp-2'>
-                {item.title}
-              </p>
-              <p className='f-tag-1 text-secondary mt-48'>{item.date}</p>
-            </div>
-          </div>
+          </Link>
         ))}
       </div>
       <div className='relative overflow-scroll hidden md:block lg:hidden pl-gutter'>
@@ -52,25 +51,24 @@ export default function News({ news }: { news: NewsType[] }) {
           }}
         >
           {news.map((item, index) => (
-            <div
-              key={index}
-              className='pl-16 border-l border-primary flex flex-col justify-between w-3-cols-vw mr-16'
-            >
-              <div className='w-full'>
-                <div className='w-full aspect-video relative'>
-                  <SanityImage
-                    image={item.thumbnail}
-                    className='object-cover object-center'
-                    alt='thumbnail'
-                  />
+            <Link href={`/news/${item.slug?.current}`} key={index}>
+              <div className='pl-16 border-l border-primary flex flex-col justify-between w-3-cols-vw mr-16'>
+                <div className='w-full'>
+                  <div className='w-full aspect-video relative'>
+                    <SanityImage
+                      image={item.thumbnail}
+                      className='object-cover object-center'
+                      alt='thumbnail'
+                    />
+                  </div>
+                  <p className='f-body-1 mt-12 line-clamp-3'>{item.title}</p>
+                  <p className='f-caption-1 text-secondary mt-8'>
+                    {getType(item.type, locale)}
+                  </p>
                 </div>
-                <p className='f-body-1 mt-12 line-clamp-3'>{item.title}</p>
-                <p className='f-caption-1 text-secondary mt-8'>
-                  {getType(item.type, locale)}
-                </p>
+                <p className='f-tag-1 text-secondary mt-48'>{item.date}</p>
               </div>
-              <p className='f-tag-1 text-secondary mt-48'>{item.date}</p>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
