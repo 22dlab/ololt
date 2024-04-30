@@ -56,19 +56,19 @@ export default function Hero() {
   ]
 
   const globeConfig = {
-    pointSize: 4,
-    globeColor: '#ffffff',
-    showAtmosphere: true,
+    pointSize: 1,
+    globeColor: '#008000',
+    showAtmosphere: false,
     atmosphereColor: '#FFFFFF',
-    atmosphereAltitude: 0.1,
-    emissive: '#fff',
-    emissiveIntensity: 0.1,
-    shininess: 0.9,
+    atmosphereAltitude: 1,
+    emissive: '#FFFFFF',
+    emissiveIntensity: 1,
+    shininess: 1,
     polygonColor: '#ec008c',
-    // ambientLight: '#38bdf8',
-    // directionalLeftLight: '#ffffff',
-    // directionalTopLight: '#ffffff',
-    // pointLight: '#ffffff',
+    ambientLight: '#FFFFFF',
+    directionalLeftLight: '#FFFFFF',
+    directionalTopLight: '#FFFFFF',
+    pointLight: '#FFFFFF',
     arcTime: 1000,
     arcLength: 0.9,
     rings: 1,
@@ -77,7 +77,7 @@ export default function Hero() {
     autoRotate: false,
     autoRotateSpeed: 0.3
   }
-  const colors = ['#EC008C', '#D02670', '#EE5396']
+  const colors = ['#EC008C']
   const sampleArcs = [
     {
       order: 1,
@@ -425,35 +425,10 @@ export default function Hero() {
 
   return (
     <div className='w-full relative'>
-      <div
-        className='w-full h-full absolute -top-1/3 left-full -translate-x-1/2'
-        style={{ zIndex: '-10' }}
-      >
-        <div className='w-[1000px] aspect-square opacity-75'>
+      <div className='w-full h-full relative' style={{ zIndex: '-10' }}>
+        <div className='opacity-75 md:opacity-100 w-[120%] md:w-[500px] lg:w-1/2 xl:w-[800px] absolute aspect-square right-0 md:-right-[5%] lg:-right-[10%] xl:right-0 -translate-y-[35%] md:-translate-y-[20%] lg:-translate-y-[10%]'>
           <World data={sampleArcs} globeConfig={globeConfig} />
         </div>
-        {/* <div className='w-full h-full relative'>
-          <Image
-            src='/misc/map.svg'
-            className='object-cover object-center hidden lg:block'
-            fill
-            alt='map'
-          />
-          <Image
-            src='/misc/map-md.svg'
-            className='object-cover object-center hidden md:block lg:hidden'
-            fill
-            alt='map'
-          />
-          <div className='block md:hidden w-full h-[500px] relative'>
-            <Image
-              src='/misc/map-sm.svg'
-              className='object-cover object-center'
-              fill
-              alt='map'
-            />
-          </div>
-        </div> */}
       </div>
       <div className='container h-full flex flex-col justify-between space-y-16'>
         <div className='w-full pt-[138px] md:pt-[68px]'>

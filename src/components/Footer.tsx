@@ -153,23 +153,25 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className='container flex text-cool-gray-40 border-t border-secondary pt-16 f-caption-1'>
-        <div className='w-1/2-cols mr-gutter'>
-          ©{year}{' '}
-          {locale === 'en'
-            ? 'Ololt. All rights reserved.'
-            : 'Ололт. Бүх эрх хуулиар хамгаалагдсан.'}
-        </div>
-        <div className='w-1/2-cols'>
-          <a
-            href='https://www.22dlab.com'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
+      <div className='w-full border-t border-secondary'>
+        <div className='container flex text-cool-gray-40 pt-16 f-caption-1'>
+          <div className='w-1/2-cols mr-gutter'>
+            ©{year}{' '}
             {locale === 'en'
-              ? 'Website by 22DesignLab'
-              : 'Вебсайтыг 22DesignLab'}
-          </a>
+              ? 'Ololt. All rights reserved.'
+              : 'Ололт. Бүх эрх хуулиар хамгаалагдсан.'}
+          </div>
+          <div className='w-1/2-cols'>
+            <a
+              href='https://www.22dlab.com'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              {locale === 'en'
+                ? 'Website by 22DesignLab'
+                : 'Вебсайтыг 22DesignLab'}
+            </a>
+          </div>
         </div>
       </div>
     </footer>

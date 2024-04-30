@@ -53,12 +53,7 @@ export default function Contact() {
     <div className='pt-[78px] pb-[112px] container md:px-1-cols-vw lg:px-0'>
       <div className='lg:flex px-0 md:px-gutter lg:px-0 space-y-72 md:space-y-[84px] lg:space-y-0'>
         <div className='lg:w-1/2-cols lg:mr-gutter'>
-          <p className='f-body-1 lg:w-3-cols-vw'>
-            Please double-check your email address fand choose the subject you
-            want to contact with us over so then we can connect you with the
-            relevant professional from our team.
-          </p>
-          <div className='space-y-8 mt-40 lg:mt-48'>
+          <div className='space-y-8'>
             {socialLinks.map((item, index) => {
               if (index !== 2) {
                 return (

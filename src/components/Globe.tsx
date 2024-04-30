@@ -78,13 +78,13 @@ export function Globe({ globeConfig, data }: WorldProps) {
   const defaultProps = {
     pointSize: 1,
     atmosphereColor: '#ffffff',
-    showAtmosphere: true,
-    atmosphereAltitude: 0.1,
-    polygonColor: 'rgba(255,255,255,0.7)',
-    globeColor: '#1d072e',
-    emissive: '#000000',
-    emissiveIntensity: 0.1,
-    shininess: 0.9,
+    showAtmosphere: false,
+    atmosphereAltitude: 0,
+    polygonColor: '#ec008c',
+    globeColor: '#ffffff',
+    emissive: '#ffffff',
+    emissiveIntensity: 0,
+    shininess: 0,
     arcTime: 2000,
     initialPosition: { lat: 116.71, lng: 49.83 },
     arcLength: 0.9,
@@ -103,16 +103,23 @@ export function Globe({ globeConfig, data }: WorldProps) {
   const _buildMaterial = () => {
     if (!globeRef.current) return
 
+    // const globeMaterial = new THREE.MeshStandardMaterial({
+    //   color: defaultProps.globeColor,
+    //   emissive: defaultProps.globeColor,
+    //   emissiveIntensity: 1.0,
+    //   shininess: 1.0
+    // })
+
     const globeMaterial = globeRef.current.globeMaterial() as unknown as {
       color: Color
       emissive: Color
       emissiveIntensity: number
       shininess: number
     }
-    globeMaterial.color = new Color(globeConfig.globeColor)
-    globeMaterial.emissive = new Color(globeConfig.emissive)
-    globeMaterial.emissiveIntensity = globeConfig.emissiveIntensity || 0.1
-    globeMaterial.shininess = globeConfig.shininess || 0.9
+    globeMaterial.color = new Color('#f2f4f8')
+    globeMaterial.emissive = new Color('#ffffff')
+    globeMaterial.emissiveIntensity = 1
+    globeMaterial.shininess = 1
   }
 
   const _buildData = () => {
@@ -238,7 +245,7 @@ export function WebGLRendererConfig() {
   useEffect(() => {
     gl.setPixelRatio(window.devicePixelRatio)
     gl.setSize(size.width, size.height)
-    gl.setClearColor(0xffaaff, 0)
+    gl.setClearColor(0x00000000, 0)
   }, [])
 
   return null
@@ -255,20 +262,14 @@ export function World(props: WorldProps) {
   return (
     <Canvas scene={scene} camera={camera}>
       <WebGLRendererConfig />
-      <ambientLight color={globeConfig.ambientLight} intensity={0.6} />
-      <directionalLight
-        color={globeConfig.directionalLeftLight}
-        position={new Vector3(-400, 100, 400)}
-      />
-      <directionalLight
-        color={globeConfig.directionalTopLight}
-        position={new Vector3(-200, 500, 200)}
-      />
+      <ambientLight color='#ffffff00' intensity={1.0} />
+      <hemisphereLight groundColor='#ffffff00' intensity={1.0} />
       <pointLight
-        color={globeConfig.pointLight}
+        color='#ffffff00'
         position={new Vector3(-200, 500, 200)}
-        intensity={0.8}
+        intensity={1.0}
       />
+
       <Globe {...props} />
       <OrbitControls
         enablePan={false}

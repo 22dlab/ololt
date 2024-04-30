@@ -12,7 +12,7 @@ export default function Partners() {
           ? 'International partners'
           : 'Олон улсын хамтрагч байгууллагууд'}
       </p>
-      <div className='flex flex-wrap justify-center px-0 md:px-96 lg:px-48 pt-20 bg-primary'>
+      <div className='flex flex-wrap justify-center px-0 md:px-96 lg:px-48 pt-20 bg-primary container'>
         {[...Array(9)].map((item, index) => (
           <div
             key={index}
