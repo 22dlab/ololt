@@ -61,17 +61,17 @@ export default function Footer() {
     {
       icon: '/icon/facebook.svg',
       label: 'Facebook',
-      link: '/'
+      link: 'https://www.facebook.com/profile.php?id=61553652253086'
     },
     {
       icon: '/icon/linkedin.svg',
       label: 'LinkedIn',
-      link: '/'
+      link: 'https://www.linkedin.com/company/ololt-climate-change-carbon-market-development-center/'
     },
     {
       icon: '/icon/email.svg',
       label: 'contact@cccmdc.mn',
-      link: '/'
+      link: 'mailto:contact@cccmdc.mn'
     }
   ]
 
@@ -114,19 +114,42 @@ export default function Footer() {
             ))}
           </div>
           <div className='w-full lg:w-2-cols-vw flex flex-col space-y-8 py-24 lg:py-0'>
-            {socialLinks.map((item, index) => (
-              <a
-                key={index}
-                href={item.link}
-                target='_blank'
-                rel='noopener noreferrer'
-              >
-                <div className='flex items-center space-x-4'>
-                  <Image src={item.icon} height={16} width={16} alt='social' />
-                  <p>{item.label}</p>
-                </div>
-              </a>
-            ))}
+            {socialLinks.map((item, index) => {
+              if (index !== 2) {
+                return (
+                  <a
+                    key={index}
+                    href={item.link}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                  >
+                    <div className='flex items-center space-x-4'>
+                      <Image
+                        src={item.icon}
+                        height={16}
+                        width={16}
+                        alt='social'
+                      />
+                      <p>{item.label}</p>
+                    </div>
+                  </a>
+                )
+              } else {
+                return (
+                  <a key={index} href={item.link}>
+                    <div className='flex items-center space-x-4'>
+                      <Image
+                        src={item.icon}
+                        height={16}
+                        width={16}
+                        alt='social'
+                      />
+                      <p>{item.label}</p>
+                    </div>
+                  </a>
+                )
+              }
+            })}
           </div>
         </div>
       </div>

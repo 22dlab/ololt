@@ -44,7 +44,7 @@ export default function About() {
 
   const approach = [
     {
-      icon: '/icon/pioneer.svg',
+      icon: '/icon/integrity.svg',
       title: {
         en: 'INTEGRITY & TRANSPARENCY',
         mn: 'ЁС ЗҮЙ БА ИЛ ТОД БАЙДАЛ'
@@ -55,7 +55,7 @@ export default function About() {
       }
     },
     {
-      icon: '/icon/domain.svg',
+      icon: '/icon/innovation.svg',
       title: {
         en: 'INNOVATION & PIONEERING',
         mn: 'ШИЙДЭЛ БА МАНЛАЙЛАЛ'
@@ -66,7 +66,7 @@ export default function About() {
       }
     },
     {
-      icon: '/icon/adherence.svg',
+      icon: '/icon/research.svg',
       title: {
         en: 'RESEARCH & SCIENCE-BASED APPROACH',
         mn: 'ШИНЖЛЭХ УХААНЧ АРГА БАРИЛ'
@@ -77,7 +77,7 @@ export default function About() {
       }
     },
     {
-      icon: '/icon/diverse.svg',
+      icon: '/icon/cultural.svg',
       title: {
         en: 'CULTURAL VALUE & CONTEXT SPECIFIC',
         mn: 'Үндэсний үнэ цэнэ, онцлогт нийцсэн'
@@ -88,7 +88,7 @@ export default function About() {
       }
     },
     {
-      icon: '/icon/ethic.svg',
+      icon: '/icon/adherence.svg',
       title: {
         en: 'ADHERENCE TO GLOBAL STANDARDS',
         mn: 'ОЛОН УЛСЫН СТАНДАРТАД НИЙЦСЭН'
@@ -99,7 +99,7 @@ export default function About() {
       }
     },
     {
-      icon: '/icon/ghg.svg',
+      icon: '/icon/diverse.svg',
       title: {
         en: 'DIVERSE, INCLUSIVE COLLABORATION',
         mn: 'ОЛОН ТАЛТ ХАМТЫН АЖИЛЛАГАА'

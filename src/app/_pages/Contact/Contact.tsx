@@ -3,6 +3,7 @@
 import Image from 'next/image'
 
 import BaseButton from '@/components/BaseButton'
+import { useCurrentLocale } from '@/locale/client'
 
 function Input({
   label,
@@ -21,27 +22,30 @@ function Input({
         name={name}
         placeholder={placeholder}
         className='mt-16 bg-[#ffffff00] outline-none border-b border-secondary text-secondary py-16 f-ui-1'
+        required
       />
     </div>
   )
 }
 
 export default function Contact() {
+  const locale = useCurrentLocale()
+
   const socialLinks = [
     {
       icon: '/icon/facebook.svg',
       label: 'Facebook',
-      link: '/'
+      link: 'https://www.facebook.com/profile.php?id=61553652253086'
     },
     {
       icon: '/icon/linkedin.svg',
       label: 'LinkedIn',
-      link: '/'
+      link: 'https://www.linkedin.com/company/ololt-climate-change-carbon-market-development-center/'
     },
     {
       icon: '/icon/email.svg',
       label: 'contact@cccmdc.mn',
-      link: '/'
+      link: 'mailto:contact@cccmdc.mn'
     }
   ]
 
@@ -55,56 +59,89 @@ export default function Contact() {
             relevant professional from our team.
           </p>
           <div className='space-y-8 mt-40 lg:mt-48'>
-            {socialLinks.map((item, index) => (
-              <a
-                key={index}
-                href={item.link}
-                target='_blank'
-                rel='noopener noreferrer'
-              >
-                <div className='flex items-center space-x-4'>
-                  <Image src={item.icon} height={16} width={16} alt='social' />
-                  <p>{item.label}</p>
-                </div>
-              </a>
-            ))}
+            {socialLinks.map((item, index) => {
+              if (index !== 2) {
+                return (
+                  <a
+                    key={index}
+                    href={item.link}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                  >
+                    <div className='flex items-center space-x-4'>
+                      <Image
+                        src={item.icon}
+                        height={16}
+                        width={16}
+                        alt='social'
+                      />
+                      <p>{item.label}</p>
+                    </div>
+                  </a>
+                )
+              } else {
+                return (
+                  <a key={index} href={item.link}>
+                    <div className='flex items-center space-x-4'>
+                      <Image
+                        src={item.icon}
+                        height={16}
+                        width={16}
+                        alt='social'
+                      />
+                      <p>{item.label}</p>
+                    </div>
+                  </a>
+                )
+              }
+            })}
           </div>
         </div>
         <div className='lg:w-1/2-cols grid grid-cols-1 lg:grid-cols-2 gap-x-gutter gap-y-40'>
           <Input
-            label='First name (Required)'
+            label={locale === 'en' ? 'First Name' : 'Овог'}
             name='firstname'
-            placeholder='Your first name'
+            placeholder={locale === 'en' ? 'Your first name' : 'Таны овог'}
           />
-
           <Input
-            label='Last name (Required)'
+            label={locale === 'en' ? 'Last Name' : 'Нэр'}
             name='lastname'
-            placeholder='Your first name'
+            placeholder={locale === 'en' ? 'Your last name' : 'Таны нэр'}
+          />
+          <Input
+            label={locale === 'en' ? 'Organisation' : 'Байгууллага'}
+            name='firstname'
+            placeholder={
+              locale === 'en' ? 'Your organisation' : 'Таны байгууллага'
+            }
+          />
+          <Input
+            label={locale === 'en' ? 'Email address' : 'Цахим шуудан'}
+            name='firstname'
+            placeholder={
+              locale === 'en' ? 'Your first name' : 'Таны цахим шуудан'
+            }
           />
 
-          <Input
-            label='Organization'
-            name='firstname'
-            placeholder='Your organization'
-          />
-
-          <Input
-            label='Email address (Required)'
-            name='firstname'
-            placeholder='Your email address'
-          />
           <div className='col-span-1 lg:col-span-2'>
-            <p className='f-ui-2'>Leave your comments (Required)</p>
+            <p className='f-ui-2'>
+              {locale === 'en'
+                ? 'Leave your comments'
+                : 'Сэтгэгдэлээ үлдээнэ үү.'}
+            </p>
             <textarea
               style={{ resize: 'none' }}
               rows={6}
-              placeholder='Your comments here'
+              placeholder={locale === 'en' ? 'Your comment' : 'Таны сэтгэгдэл'}
               className='w-full mt-16 bg-[#ffffff00] border p-16 border-secondary'
             />
           </div>
           <button type='submit'>
-            <BaseButton type='primary' label='Send message' icon />
+            <BaseButton
+              type='primary'
+              label={locale === 'en' ? 'Send message' : 'Илгээх'}
+              icon
+            />
           </button>
         </div>
       </div>
