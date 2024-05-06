@@ -1,5 +1,7 @@
 'use client'
 
+import * as THREE from 'three'
+
 import { useEffect, useRef, useState } from 'react'
 import { Color, Scene, Fog, PerspectiveCamera, Vector3 } from 'three'
 import ThreeGlobe from 'three-globe'
@@ -86,7 +88,7 @@ export function Globe({ globeConfig, data }: WorldProps) {
     emissiveIntensity: 0,
     shininess: 0,
     arcTime: 2000,
-    initialPosition: { lat: 116.71, lng: 49.83 },
+    initialPosition: { lat: 38.89, lng: -77.03 },
     arcLength: 0.9,
     rings: 1,
     maxRings: 3,
@@ -162,12 +164,18 @@ export function Globe({ globeConfig, data }: WorldProps) {
       globeRef.current
         .hexPolygonsData(countries.features)
         .hexPolygonResolution(3)
-        .hexPolygonMargin(0.7)
+        .hexPolygonMargin(0.5)
         .showAtmosphere(defaultProps.showAtmosphere)
         .atmosphereColor(defaultProps.atmosphereColor)
         .atmosphereAltitude(defaultProps.atmosphereAltitude)
         .hexPolygonColor((e) => {
-          return defaultProps.polygonColor
+          const country = e.id
+
+          if (country === 'MN') {
+            return '#ec008c'
+          } else {
+            return '#FFFFFF'
+          }
         })
       startAnimation()
     }
@@ -251,13 +259,38 @@ export function WebGLRendererConfig() {
   return null
 }
 
+const CenterCameraOnCountry = () => {
+  const { camera } = useThree()
+  const controls = useRef<OrbitControls>(null)
+
+  useEffect(() => {
+    // Convert latitude and longitude to spherical coordinates
+    const phi = (90 - 106.73) * (Math.PI / 180)
+    const theta = (100 + 180) * (Math.PI / 180)
+
+    // Calculate the camera position and target
+    const targetPosition = new THREE.Vector3()
+    targetPosition.setFromSphericalCoords(1, phi, theta)
+
+    const cameraPosition = new THREE.Vector3()
+    cameraPosition.setFromSphericalCoords(cameraZ, phi, theta)
+
+    // Update the camera position and target
+    camera.position.copy(cameraPosition)
+    controls.current.target.copy(targetPosition)
+    controls.current.update()
+  }, [])
+
+  return <OrbitControls ref={controls} enablePan={false} enableZoom={false} />
+}
+
 export function World(props: WorldProps) {
   const { globeConfig } = props
   const scene = new Scene()
   scene.fog = new Fog(0xffffff, 400, 2000)
 
   const camera = new PerspectiveCamera(50, aspect, 180, 1800)
-  camera.position.set(7500, 5000, cameraZ)
+  // camera.position.set(7500, 5000, cameraZ)
 
   return (
     <Canvas scene={scene} camera={camera}>
@@ -281,6 +314,7 @@ export function World(props: WorldProps) {
         minPolarAngle={Math.PI / 3.5}
         maxPolarAngle={Math.PI - Math.PI / 3}
       />
+      <CenterCameraOnCountry />
     </Canvas>
   )
 }
