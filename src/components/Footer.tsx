@@ -158,8 +158,8 @@ export default function Footer() {
           <div className='w-1/2-cols mr-gutter'>
             ©{year}{' '}
             {locale === 'en'
-              ? 'Ololt. All rights reserved.'
-              : 'Ололт. Бүх эрх хуулиар хамгаалагдсан.'}
+              ? 'OLOLT Center. All Rights Reserved.'
+              : 'ОЛОЛТ Төв. Бүх эрх хуулиар хамгаалагдсан..'}
           </div>
           <div className='w-1/2-cols'>
             <a

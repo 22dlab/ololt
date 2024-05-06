@@ -13,6 +13,7 @@ import { useCurrentLocale } from '@/locale/client'
 
 import { useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
+import BaseButton from '@/components/BaseButton'
 
 const ReactPlayer = dynamic(() => import('react-player/youtube'), {
   ssr: false
@@ -33,7 +34,7 @@ function Card({ item }: { item: NewsType }) {
           <p className='f-tag-1'>{item.date}</p>
           <p className='f-heading-4'>{item.title}</p>
         </div>
-        <p className='f-ui-1 mt-16 md:mt-24 line-clamp-2 text-secondary'>
+        <p className='f-ui-1 mt-16 md:mt-24 line-clamp-5 text-secondary'>
           {item.content[0].children[0].text}
         </p>
       </div>
@@ -66,6 +67,17 @@ export default function News({
       mn: 'Бичлэг'
     }
   ]
+
+  const date = new Date(news[0].date)
+
+  console.log(date)
+
+  news.sort((a, b) => {
+    let dateA: any = new Date(a.date)
+    let dateB: any = new Date(b.date)
+
+    return dateB - dateA
+  })
 
   const locale = useCurrentLocale()
 
@@ -207,26 +219,35 @@ export default function News({
               className='w-full py-24 md:py-48 space-y-40 lg:space-y-60 news'
             >
               <p className='f-heading-1'>{items[1][locale]}</p>
-              {newsType.map((item, index) => (
-                <div className='w-fit' key={index}>
-                  <Link href={`/news/${item.slug?.current}`}>
-                    <Card item={item} />
-                  </Link>
-                </div>
-              ))}
+              {newsType
+                .filter((x) => x.lang === locale)
+                .map((item, index) => (
+                  <div className='w-fit' key={index}>
+                    <Link href={`/news/${item.slug?.current}`}>
+                      <Card item={item} />
+                    </Link>
+                  </div>
+                ))}
+              {/* <div className='w-7-cols flex justify-center'>
+                <button>
+                  <BaseButton type='primary' label='See more' />
+                </button>
+              </div> */}
             </div>
             <div
               id='articles'
               className='w-full py-24 md:py-48 space-y-40 lg:space-y-60 news'
             >
               <p className='f-heading-1'>{items[2][locale]}</p>
-              {articleType.map((item, index) => (
-                <div className='w-fit' key={index}>
-                  <Link href={`/news/${item.slug?.current}`}>
-                    <Card item={item} />
-                  </Link>
-                </div>
-              ))}
+              {articleType
+                .filter((x) => x.lang === locale)
+                .map((item, index) => (
+                  <div className='w-fit' key={index}>
+                    <Link href={`/news/${item.slug?.current}`}>
+                      <Card item={item} />
+                    </Link>
+                  </div>
+                ))}
             </div>
             <div
               id='videos'

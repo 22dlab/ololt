@@ -430,11 +430,11 @@ export default function Hero() {
           <World data={sampleArcs} globeConfig={globeConfig} />
         </div>
       </div>
-      <div className='container h-full flex flex-col justify-between space-y-16'>
+      <div className='container h-full flex flex-col justify-between space-y-24'>
         <div className='w-full pt-[138px] md:pt-[68px]'>
           <div
             className={`w-4-cols-vw lg:w-5-cols-vw space-y-24 ${
-              locale === 'en' && 'lg:mb-96'
+              locale === 'en' && 'lg:mt-64'
             }`}
           >
             <p className='f-heading-3'>
