@@ -169,6 +169,7 @@ export function Globe({ globeConfig, data }: WorldProps) {
         .atmosphereColor(defaultProps.atmosphereColor)
         .atmosphereAltitude(defaultProps.atmosphereAltitude)
         .hexPolygonColor((e) => {
+          // @ts-ignore */
           const country = e.id
 
           if (country === 'MN') {
@@ -261,6 +262,7 @@ export function WebGLRendererConfig() {
 
 const CenterCameraOnCountry = () => {
   const { camera } = useThree()
+  // @ts-ignore */
   const controls = useRef<OrbitControls>(null)
 
   useEffect(() => {
