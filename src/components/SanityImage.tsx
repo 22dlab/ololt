@@ -32,6 +32,7 @@ export default function SanityImage({
           sizes='(min-width: 0px) 50vw'
           draggable='false'
           priority={priority}
+          quality={100}
           unoptimized
         />
       )}

@@ -68,10 +68,6 @@ export default function News({
     }
   ]
 
-  const date = new Date(news[0].date)
-
-  console.log(date)
-
   news.sort((a, b) => {
     let dateA: any = new Date(a.date)
     let dateB: any = new Date(b.date)
@@ -86,6 +82,9 @@ export default function News({
 
   const [currentInView, setCurrentInView] = useState<number>(0)
   const [open, setOpen] = useState(false)
+
+  const [newsOpen, setNewsOpen] = useState(1)
+  const [articleOpen, setArticleOpen] = useState(1)
 
   const isInView = (element: HTMLElement) => {
     const rect = element.getBoundingClientRect()
@@ -221,6 +220,7 @@ export default function News({
               <p className='f-heading-1'>{items[1][locale]}</p>
               {newsType
                 .filter((x) => x.lang === locale)
+                .slice(0, newsOpen * 6)
                 .map((item, index) => (
                   <div className='w-fit' key={index}>
                     <Link href={`/news/${item.slug?.current}`}>
@@ -228,11 +228,20 @@ export default function News({
                     </Link>
                   </div>
                 ))}
-              {/* <div className='w-7-cols flex justify-center'>
-                <button>
-                  <BaseButton type='primary' label='See more' />
-                </button>
-              </div> */}
+              {newsType.filter((x) => x.lang === locale).length > 6 &&
+                newsOpen * 6 <
+                  newsType.filter((x) => x.lang === locale).length && (
+                  <div className='w-7-cols'>
+                    <button onClick={() => setNewsOpen(newsOpen + 1)}>
+                      <BaseButton
+                        type='primary'
+                        label={locale === 'en' ? 'See more' : 'Дэлгэрэнгүй'}
+                        icon
+                        down
+                      />
+                    </button>
+                  </div>
+                )}
             </div>
             <div
               id='articles'
@@ -241,6 +250,7 @@ export default function News({
               <p className='f-heading-1'>{items[2][locale]}</p>
               {articleType
                 .filter((x) => x.lang === locale)
+                .slice(0, articleOpen * 6)
                 .map((item, index) => (
                   <div className='w-fit' key={index}>
                     <Link href={`/news/${item.slug?.current}`}>
@@ -248,6 +258,20 @@ export default function News({
                     </Link>
                   </div>
                 ))}
+              {articleType.filter((x) => x.lang === locale).length > 6 &&
+                articleOpen * 6 <
+                  articleType.filter((x) => x.lang === locale).length && (
+                  <div className='w-7-cols'>
+                    <button onClick={() => setArticleOpen(articleOpen + 1)}>
+                      <BaseButton
+                        type='primary'
+                        label={locale === 'en' ? 'See more' : 'Дэлгэрэнгүй'}
+                        icon
+                        down
+                      />
+                    </button>
+                  </div>
+                )}
             </div>
             <div
               id='videos'

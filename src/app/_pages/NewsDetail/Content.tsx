@@ -13,7 +13,13 @@ import {
   LinkedinShareButton
 } from 'react-share'
 
+import { useCurrentLocale } from '@/locale/client'
+
+import { getType } from '@/hooks/getType'
+
 export default function Content({ news }: { news: NewsType }) {
+  const locale = useCurrentLocale()
+
   const url = 'https://www.cccmdc.mn/news' + news.slug.current
 
   const components: PortableTextComponents = {
@@ -48,6 +54,7 @@ export default function Content({ news }: { news: NewsType }) {
               image={news.thumbnail}
               className='object-cover object-center'
               alt={news.title}
+              priority
             />
           </div>
         </div>
@@ -56,12 +63,19 @@ export default function Content({ news }: { news: NewsType }) {
         <div className='md:px-gutter'>
           <div className='mt-40 lg:mt-96 w-full lg:flex divide-y divide-[#C1C7CD] lg:divide-none space-y-[40px] lg:space-y-0'>
             <div className='w-full lg:w-2-cols-vw mr-gutter space-y-8'>
-              <p className='f-tag-1 text-accent'>{news.type}</p>
-              <p className='f-caption-1'>
-                <span className='text-secondary'>Date:</span> {news.date}
+              <p className='f-tag-1 text-accent'>
+                {getType(news.type, locale)}
               </p>
               <p className='f-caption-1'>
-                <span className='text-secondary'>Written by:</span>{' '}
+                <span className='text-secondary'>
+                  {locale === 'en' ? 'Date:' : 'Огноо:'}
+                </span>{' '}
+                {news.date}
+              </p>
+              <p className='f-caption-1'>
+                <span className='text-secondary'>
+                  {locale === 'en' ? 'Written by:' : 'Нийтлэл бичсэн:'}
+                </span>{' '}
                 {news.author}
               </p>
             </div>
@@ -71,7 +85,7 @@ export default function Content({ news }: { news: NewsType }) {
             </div>
             <div className='w-full lg:w-2-cols flex lg:block justify-between pt-24 md:pt-40 lg:pt-0'>
               <p className='w-1/2-cols lg:w-full text-left lg:text-right caption-1 text-secondary'>
-                Share it
+                {locale === 'en' ? 'Share it' : 'Хуваалцах'}
               </p>
               <div className='w-1/2-cols lg:w-full flex justify-start lg:justify-end mt-8 space-x-8'>
                 <FacebookShareButton url={url}>

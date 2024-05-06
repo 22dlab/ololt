@@ -1,8 +1,10 @@
+'use client'
+
 import { NewsType } from '@/type'
 
 import { getType } from '@/hooks/getType'
 
-import { getCurrentLocale } from '@/locale/server'
+import { useCurrentLocale } from '@/locale/client'
 
 import BaseButton from '@/components/BaseButton'
 import SanityImage from '@/components/SanityImage'
@@ -10,14 +12,23 @@ import SanityImage from '@/components/SanityImage'
 import Link from 'next/link'
 
 export default function News({ news }: { news: NewsType[] }) {
-  const locale = getCurrentLocale()
+  const locale = useCurrentLocale()
+
+  const localeNews = news.filter((x) => x.lang === locale)
+
+  localeNews.sort((a, b) => {
+    let dateA: any = new Date(a.date)
+    let dateB: any = new Date(b.date)
+
+    return dateB - dateA
+  })
 
   return (
     <div className='container py-32 md:py-64 space-y-24 md:space-y-40'>
       <div className='w-full grid md:hidden lg:grid grid-cols-1 md:grid-cols-4 gap-gutter'>
-        {news.map((item, index) => (
+        {localeNews.slice(0, 4).map((item, index) => (
           <Link href={`/news/${item.slug?.current}`} key={index}>
-            <div className='pl-16 border-l border-primary flex md:flex-col justify-between'>
+            <div className='pl-16 border-l border-primary flex md:flex-col justify-between h-full'>
               <div className='w-2-cols-vw md:w-full'>
                 <div className='w-full aspect-video relative'>
                   <SanityImage
@@ -34,9 +45,7 @@ export default function News({ news }: { news: NewsType[] }) {
                 </p>
               </div>
               <div className='w-2-cols-vw md:w-full flex flex-col justify-between'>
-                <p className='block md:hidden f-body-1 mt-12 line-clamp-2'>
-                  {item.title}
-                </p>
+                <p className='block md:hidden f-body-1 mt-12'>{item.title}</p>
                 <p className='f-tag-1 text-secondary mt-48'>{item.date}</p>
               </div>
             </div>
@@ -50,7 +59,7 @@ export default function News({ news }: { news: NewsType[] }) {
             display: '-webkit-box'
           }}
         >
-          {news.map((item, index) => (
+          {localeNews.slice(0, 4).map((item, index) => (
             <Link href={`/news/${item.slug?.current}`} key={index}>
               <div className='pl-16 border-l border-primary flex flex-col justify-between w-3-cols-vw mr-16'>
                 <div className='w-full'>
