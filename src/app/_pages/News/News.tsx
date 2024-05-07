@@ -43,9 +43,14 @@ function Card({ item }: { item: NewsType }) {
 }
 
 export default function News({
+  spotlight,
   news,
   videos
 }: {
+  spotlight: {
+    en: NewsType
+    mn: NewsType
+  }
   news: NewsType[]
   videos: VideoType[]
 }) {
@@ -193,17 +198,21 @@ export default function News({
               <p className='f-heading-1'>{items[0][locale]}</p>
               <div className='w-full aspect-[4/3] md:aspect-video lg:aspect-[2/1] relative'>
                 <SanityImage
-                  image={news[0].thumbnail}
+                  image={spotlight[locale].thumbnail}
                   className='object-center object-cover'
                   alt='thumbnail'
                 />
                 <div className='absolute w-3-cols-vw bottom-0 left-0 lg:left-full lg:-translate-x-full bg-secondary py-24 px-20 space-y-24 lg:space-y-60 flex flex-col justify-between'>
                   <div className='space-y-8'>
-                    <p className='f-tag-1'>{getType(news[0].type, locale)}</p>
-                    <p className='f-heading-4 line-clamp-3'>{news[0].title}</p>
+                    <p className='f-tag-1'>
+                      {getType(spotlight[locale].type, locale)}
+                    </p>
+                    <p className='f-heading-4 line-clamp-3'>
+                      {spotlight[locale].title}
+                    </p>
                   </div>
                   <div className='w-fit'>
-                    <Link href={`/news/${news[0].slug?.current}`}>
+                    <Link href={`/news/${spotlight[locale].slug?.current}`}>
                       <BaseLink
                         label={locale === 'en' ? 'Read more' : 'Дэлгэрэнгүй'}
                         icon

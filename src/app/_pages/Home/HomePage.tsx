@@ -1,4 +1,4 @@
-import { NewsType, VideoType } from '@/type'
+import { NewsType, PartnerType, VideoType } from '@/type'
 
 import Hero from './Hero'
 import About from './About'
@@ -8,16 +8,18 @@ import Videos from './Videos'
 
 export default function HomePage({
   news,
-  videos
+  videos,
+  partners
 }: {
   news: NewsType[]
   videos: VideoType[]
+  partners: PartnerType[]
 }) {
   return (
     <div className='pt-48 lg:pt-96 text-primary overflow-hidden'>
       <Hero />
       <About />
-      <Partners />
+      <Partners partners={partners} />
       <News news={news} />
       <Videos videos={videos} />
     </div>

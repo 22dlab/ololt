@@ -64,10 +64,13 @@ export const deskStructure = (
       }),
       S.divider(),
       S.documentTypeListItem('partner').title('Partners').icon(UsersIcon),
+      S.divider(),
+      S.listItem()
+        .icon(BlockContentIcon)
+        .title('Spotlight News')
+        .child(
+          S.editor().schemaType('spotlightNews').documentId('spotlightNews')
+        ),
       S.documentTypeListItem('news').title('News').icon(BlockContentIcon),
       S.documentTypeListItem('video').title('Videos').icon(PlayIcon)
-      // S.listItem()
-      //   .icon(CogIcon)
-      //   .title('Settings')
-      //   .child(S.editor().schemaType('settings').documentId('settings'))
     ])

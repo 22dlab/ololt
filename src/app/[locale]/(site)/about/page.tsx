@@ -2,6 +2,10 @@ import AboutPage from '@/app/_pages/About/AboutPage'
 
 import type { Metadata } from 'next'
 
+import { client } from '@/sanity/lib/sanity.client'
+
+import { getPartners } from '@/sanity/lib/sanity.queries'
+
 export const metadata: Metadata = {
   title: 'Driving Climate Action with Integrity and Innovation | OLOLT Center',
   description:
@@ -22,6 +26,10 @@ export const metadata: Metadata = {
   }
 }
 
-export default function About() {
-  return <AboutPage />
+export const revalidate = 60
+
+export default async function About() {
+  const partners = await client.fetch(getPartners)
+
+  return <AboutPage partners={partners} />
 }

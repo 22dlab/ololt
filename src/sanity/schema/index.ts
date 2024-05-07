@@ -6,6 +6,7 @@ import ghg from './documents/ghg'
 import academy from './documents/academy'
 
 import partner from './documents/partner'
+import spotlightNews from './documents/spotlightNews'
 import news from './documents/news'
 import video from './documents/video'
 
@@ -20,6 +21,7 @@ import { listImage } from './components/listImage'
 import { threeFeature } from './components/threeFeature'
 import { threeStep } from './components/threeStep'
 import { accordion } from './components/accordion'
+import { linkImage } from './components/linkImage'
 import { fileDownlaod } from './components/fileDownload'
 
 import { localeString } from './components/localeString'
@@ -33,6 +35,7 @@ export const schemaTypes = [
   academy,
 
   partner,
+  spotlightNews,
   news,
   video,
 
@@ -47,6 +50,7 @@ export const schemaTypes = [
   threeFeature,
   threeStep,
   accordion,
+  linkImage,
   fileDownlaod,
 
   localeString

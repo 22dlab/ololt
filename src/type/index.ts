@@ -50,6 +50,11 @@ export type ContentType = {
   components: ItemType[]
 }
 
+export type PartnerType = {
+  name: string
+  logo: ImageType
+}
+
 export type NewsType = {
   title: string
   slug: {

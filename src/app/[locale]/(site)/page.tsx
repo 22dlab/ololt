@@ -1,6 +1,6 @@
 import { client } from '@/sanity/lib/sanity.client'
 
-import { getNews, getVideos } from '@/sanity/lib/sanity.queries'
+import { getNews, getVideos, getPartners } from '@/sanity/lib/sanity.queries'
 
 import HomePage from '@/app/_pages/Home/HomePage'
 
@@ -33,8 +33,11 @@ export const metadata: Metadata = {
 export default async function Home() {
   const news = await client.fetch(getNews)
   const videos = await client.fetch(getVideos)
+  const partners = await client.fetch(getPartners)
 
-  return <HomePage news={news} videos={videos.slice(0, 2)} />
+  // return (
+  //   <HomePage news={news} videos={videos.slice(0, 2)} partners={partners} />
+  // )
 
-  // return <Construction />
+  return <Construction />
 }
