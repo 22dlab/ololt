@@ -28,6 +28,9 @@ const Content = `
       icon {
         ${Image}
       },
+      photo {
+        ${Image}
+      },
       link,
       label,
       value,
@@ -35,6 +38,43 @@ const Content = `
       answer,
       title,
       body
+    }
+  }
+`
+
+const News = `
+  title,
+  slug,
+  type,
+  lang,
+  date,
+  thumbnail {
+    ${Image}
+  },
+  content[]{
+    _type,
+    style,
+    ${Image},
+    children
+  }
+`
+
+export const getPartners = groq`
+  *[_type == "partner"]{
+    name,
+    logo {
+      ${Image}
+    }  
+  }
+`
+
+export const getSpotlightNews = groq`
+  *[_type == "spotlightNews"][0]{
+    en -> {
+      ${News}
+    },
+    mn -> {
+      ${News}
     }
   }
 `

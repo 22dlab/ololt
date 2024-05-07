@@ -17,11 +17,15 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   if (locale === 'en') {
     return {
-      title: 'Climate Change & Carbon Market Development Center'
+      title: 'Climate Change & Carbon Market Development Center',
+      description:
+        'OLOLT Center is a leading Mongolian organization pioneering climate change mitigation and sustainable development. Our expertise spans risk assessments, policy planning, climate finance, project implementation, carbon markets, energy certification, ESG integration, GHG accounting, and capacity building. With a commitment to transparency, research-driven approaches, and global best practices, we empower stakeholders through innovative solutions for a sustainable future.'
     }
   } else {
     return {
-      title: 'Уур амьсгалын өөрчлөлт, Нүүрстөрөгчийн зах зээлийн хөгжлийн төв'
+      title: 'Уур амьсгалын өөрчлөлт, Нүүрстөрөгчийн зах зээлийн хөгжлийн төв',
+      description:
+        'OLOLT Center is a leading Mongolian organization pioneering climate change mitigation and sustainable development. Our expertise spans risk assessments, policy planning, climate finance, project implementation, carbon markets, energy certification, ESG integration, GHG accounting, and capacity building. With a commitment to transparency, research-driven approaches, and global best practices, we empower stakeholders through innovative solutions for a sustainable future.'
     }
   }
 }
@@ -53,7 +57,7 @@ export default function RootLayout({
           <Navbar />
           {children}
           <Devtool />
-          {/* <Footer /> */}
+          <Footer />
         </I18nProviderClient>
       </body>
     </html>

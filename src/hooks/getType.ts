@@ -7,12 +7,12 @@ type Type = {
 const types: Type[] = [
   {
     en: 'News',
-    mn: 'News',
+    mn: 'Мэдээ',
     value: 'news'
   },
   {
     en: 'Article',
-    mn: 'Article',
+    mn: 'Нийтлэл',
     value: 'article'
   }
 ]

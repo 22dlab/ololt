@@ -5,7 +5,7 @@
       "sm": "429px",
       "md": "744px",
       "lg": "1280px",
-      "xl": "1440px"
+      "xl": "1441px"
     },
     "columns": {
       "xs": "4",
@@ -19,7 +19,7 @@
       "sm": "auto",
       "md": "auto",
       "lg": "auto",
-      "xl": "auto"
+      "xl": "1440px"
     },
     "gutters": {
       "inner": {

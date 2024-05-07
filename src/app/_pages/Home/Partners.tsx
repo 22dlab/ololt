@@ -1,20 +1,38 @@
 import Image from 'next/image'
 
 import { getCurrentLocale } from '@/locale/server'
+import { PartnerType } from '@/type'
 
-export default function Partners() {
+import SanityImage from '@/components/SanityImage'
+
+export default function Partners({ partners }: { partners: PartnerType[] }) {
   const locale = getCurrentLocale()
 
   return (
-    <div className='w-full py-48 bg-secondary'>
+    <div className='w-full py-48 bg-secondary space-y-40'>
       <p className='text-center f-heading-4 text-secondary'>
         {locale === 'en'
           ? 'International partners'
           : 'Олон улсын хамтрагч байгууллагууд'}
       </p>
-      <div className='container grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 md:px-48 py-20 bg-primary mt-40 gap-y-24 gap-x-16'>
-        {[...Array(9)].map((item, index) => (
-          <div key={index} className='w-full h-[56px] relative'>
+      <div className='flex flex-wrap justify-center px-0 md:px-96 lg:px-48 pt-20 bg-primary container'>
+        {partners.map((item, index) => (
+          <div
+            key={index}
+            className='w-[191px] lg:w-[200px] h-[56px] relative mb-20'
+          >
+            <SanityImage
+              image={item.logo}
+              className='object-contain object-center'
+              alt={item.name}
+            />
+          </div>
+        ))}
+        {/* {[...Array(9)].map((item, index) => (
+          <div
+            key={index}
+            className='w-[191px] lg:w-[200px] h-[56px] relative mb-20'
+          >
             <Image
               fill
               src={`/partners/${index}.png`}
@@ -22,7 +40,7 @@ export default function Partners() {
               alt='partner'
             />
           </div>
-        ))}
+        ))} */}
       </div>
     </div>
   )

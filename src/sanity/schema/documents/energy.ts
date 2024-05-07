@@ -36,6 +36,7 @@ export default defineType({
         { type: 'threeStep' },
         { type: 'listImage' },
         { type: 'accordion' },
+        { type: 'linkImage' },
         { type: 'fileDownlaod' }
       ]
     })

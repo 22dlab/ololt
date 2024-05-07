@@ -26,6 +26,7 @@ export type ItemType = {
   items?: [
     {
       icon?: ImageType
+      photo?: ImageType
       label?: LocaleString
       title?: LocaleString
       value?: LocaleString
@@ -47,6 +48,11 @@ export type ItemType = {
 export type ContentType = {
   name: LocaleString
   components: ItemType[]
+}
+
+export type PartnerType = {
+  name: string
+  logo: ImageType
 }
 
 export type NewsType = {

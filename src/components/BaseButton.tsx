@@ -15,9 +15,10 @@ const buttonStyles = cva(
 interface ButtonProps extends VariantProps<typeof buttonStyles> {
   label: string
   icon?: boolean
+  down?: boolean
 }
 
-export default function BaseButton({ type, icon, label }: ButtonProps) {
+export default function BaseButton({ type, icon, label, down }: ButtonProps) {
   return (
     <div className={buttonStyles({ type })}>
       <p>{label}</p>
@@ -28,6 +29,7 @@ export default function BaseButton({ type, icon, label }: ButtonProps) {
           viewBox='0 0 16 16'
           fill='none'
           xmlns='http://www.w3.org/2000/svg'
+          className={down ? 'rotate-90' : 'rotate-0'}
         >
           <path
             d='M9 3L8.285 3.6965L12.075 7.5H2V8.5H12.075L8.285 12.2865L9 13L14 8L9 3Z'

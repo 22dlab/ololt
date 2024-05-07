@@ -86,27 +86,38 @@ export default function About() {
 
   const cards = [
     {
+      link: '/energy-certification#i-rec (e) certification',
       image: '/misc/card.png',
-      logo: '/partners/8.png',
+      logo: '/misc/i-track.png',
+      subtitle: {
+        en: 'Local Issuer of I-TRACK Foundation',
+        mn: 'Сэргээгдэх эрчим хүчний гэрчилгээ олгох Монгол Улс дахь итгэмжлэгдсэн байгууллага'
+      },
       title: {
-        en: 'OLOLT Center now issues Renewable Energy Certificate (I-REC) in Mongolia, adhering to the I-TRACK Standard Foundation',
+        en: 'OLOLT Center now issues International Renewable Energy Certificate (I-REC) in Mongolia, adhering to the I-TRACK Foundation',
         mn: 'ОЛОЛТ Төв нь I-TRACK Сангийн ‘I-REC (E)’ стандартын дагуу сэргээгдэх эрчим хүчний гэрчилгээ олгож эхлэв.'
       },
       text: {
-        en: 'In July 2023, the ОЛОЛТ Center achieved a significant milestone by officially becoming a local issuer for the I-TRACK Standard Foundation. This momentous accomplishment marked the inauguration of the nation’s foremost market leverage mechanism, strategically aimed at enhancing the country’s renewable energy production.',
+        en: 'In July 2023, the OLOLT Center achieved a significant milestone by officially becoming a local issuer for the I-TRACK Standard Foundation. This momentous accomplishment marked the inauguration of the nation’s foremost market leverage mechanism, strategically aimed at enhancing the country’s renewable energy production.',
         mn: 'ОЛОЛТ Төв нь 2023 оны 7 дугаар сараас эхлэн I-TRACK  Сангийн Монгол Улс дахь албан ёсны Гэрчилгээ олгогч байгууллага болж, үндэсний хэмжээнд сэргээгдэх эрчим хүч үйлдвэрлэлийг дэмжих зах зээлийн хөшүүргийн механизмыг нэвтрүүлэв.'
       },
       label: {
-        en: 'Discover more',
+        en: 'Learn more',
         mn: 'Дэлгэрэнгүй'
       }
     },
     {
+      link: '/news/ololt-center-joined-GRI-community',
       image: '/misc/card-2.png',
       logo: '/partners/5.png',
-      title: {
+
+      subtitle: {
         en: 'Community member of GRI',
         mn: 'GRI санаачилгын гишүүн'
+      },
+      title: {
+        en: 'OLOLT Center became the first Mongolian organization to join the GRI Community',
+        mn: 'ОЛОЛТ Төв нь олон улсын тогтвортой байдлын тайлагналтын санаачилга болох ‘GRI’ -ын Монгол дахь анхны гишүүн байгууллага болов.'
       },
       text: {
         en: 'As Mongolia’s pioneering member organization affiliated with GRI, the global sustainability reporting standard, OLOLT Center values the partnership and contributions of private sector entities.\n\nAligned with internationally recognized standards like the Global Reporting Initiative (GRI), we assist organizations in managing environmental and social risks, promoting transparency, and integrating sustainable practices into their operations.',
@@ -121,7 +132,7 @@ export default function About() {
 
   return (
     <>
-      <div className='container md:px-1-cols-vw lg:px-2-cols-vw'>
+      <div className='container md:px-1-cols-vw lg:px-2-cols-vw mt-48'>
         <div className='w-full md:px-gutter py-64 space-y-64'>
           <div className='w-full md:flex space-y-16 md:space-y-0'>
             <div className='w-2-cols-vw mr-gutter'>
@@ -210,17 +221,11 @@ export default function About() {
                   </div>
                 </div>
                 <div className='w-full md:w-5-cols-vw px-24 md:px-32 py-24 flex flex-col justify-center bg-secondary space-y-24'>
-                  {index === 0 && (
-                    <p className='f-tag-1 text-accent'>
-                      {locale === 'en'
-                        ? 'Local Issuer of I-TRACK Standard Foundation'
-                        : 'Сэргээгдэх эрчим хүчний гэрчилгээ олгох Монгол Улс дахь итгэмжлэгдсэн байгууллага'}
-                    </p>
-                  )}
+                  <p className='f-tag-1 text-accent'>{item.subtitle[locale]}</p>
                   <p className='f-heading-4'>{item.title[locale]}</p>
                   <p className='text-secondary f-ui-1'>{item.text[locale]}</p>
                   <div className='w-fit'>
-                    <Link href='/'>
+                    <Link href={item.link}>
                       <BaseButton
                         type='secondary'
                         icon

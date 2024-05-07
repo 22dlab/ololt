@@ -11,6 +11,9 @@ importers:
       '@area17/a17-tailwind-plugins':
         specifier: ^4.0.4
         version: 4.0.4(tailwindcss@3.4.3)
+      '@emailjs/browser':
+        specifier: ^4.3.3
+        version: 4.3.3
       '@portabletext/react':
         specifier: ^3.0.17
         version: 3.0.17(react@18.2.0)
@@ -851,6 +854,10 @@ packages:
     resolution: {integrity: sha512-+MKAJEOfaBe5SmV6t34p80MMKhjvUz0vRrvVJbPT0WElzaOJ/1xs+D+KDv+tD/NE5ujfrChEcshd4fLn0wpiqg==}
     peerDependencies:
       react: '>=16.8.0'
+
+  '@emailjs/browser@4.3.3':
+    resolution: {integrity: sha512-ltpt2S/WVREIBXptxYAVYBvXb2O6yTUYiRUWF8OLikMxlmiGsIgKpgHppikNd4Df0uAav7jCsQKcOJ3TJFUx5g==}
+    engines: {node: '>=14.0.0'}
 
   '@emotion/is-prop-valid@0.8.8':
     resolution: {integrity: sha512-u5WtneEAr5IDG2Wv65yhunPSMLIpuKsbuOktRojfrEiEvRyC85LgPMZI63cr7NUqT8ZIGdSVg8ZKGxIug4lXcA==}
@@ -5976,6 +5983,8 @@ snapshots:
     dependencies:
       react: 18.2.0
       tslib: 2.6.2
+
+  '@emailjs/browser@4.3.3': {}
 
   '@emotion/is-prop-valid@0.8.8':
     dependencies:

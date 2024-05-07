@@ -67,7 +67,7 @@ export default function Navbar() {
     },
     {
       en: 'ESG',
-      mn: 'БНЗ',
+      mn: 'БОНЗ',
       link: '/esg'
     },
     {
@@ -86,7 +86,7 @@ export default function Navbar() {
     <nav
       className={`${
         scrollUp ? 'translate-y-0' : '-translate-y-[100%]'
-      } fixed top-0 z-10 w-full transition-transform duration-300 delay-150 ease-in-out bg-primary border-b border-primary`}
+      } fixed top-0 z-10 w-screen transition-transform duration-300 delay-150 ease-in-out bg-primary border-b border-primary`}
     >
       <div className='container flex justify-between h-48 lg:h-96'>
         <div className='py-12 lg:py-[18px] flex items-center'>

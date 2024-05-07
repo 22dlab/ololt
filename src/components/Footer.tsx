@@ -42,7 +42,7 @@ export default function Footer() {
     },
     {
       en: 'ESG',
-      mn: 'БНЗ',
+      mn: 'БОНЗ',
       link: '/esg'
     },
     {
@@ -61,17 +61,17 @@ export default function Footer() {
     {
       icon: '/icon/facebook.svg',
       label: 'Facebook',
-      link: '/'
+      link: 'https://www.facebook.com/profile.php?id=61553652253086'
     },
     {
       icon: '/icon/linkedin.svg',
       label: 'LinkedIn',
-      link: '/'
+      link: 'https://www.linkedin.com/company/ololt-climate-change-carbon-market-development-center/'
     },
     {
       icon: '/icon/email.svg',
       label: 'contact@cccmdc.mn',
-      link: '/'
+      link: 'mailto:contact@cccmdc.mn'
     }
   ]
 
@@ -85,7 +85,7 @@ export default function Footer() {
           <Link href='/'>
             <Image
               src={
-                locale === 'en'
+                locale === 'mn'
                   ? '/logo/logo-en-dark.svg'
                   : '/logo/logo-mn-dark.svg'
               }
@@ -114,39 +114,64 @@ export default function Footer() {
             ))}
           </div>
           <div className='w-full lg:w-2-cols-vw flex flex-col space-y-8 py-24 lg:py-0'>
-            {socialLinks.map((item, index) => (
-              <a
-                key={index}
-                href={item.link}
-                target='_blank'
-                rel='noopener noreferrer'
-              >
-                <div className='flex items-center space-x-4'>
-                  <Image src={item.icon} height={16} width={16} alt='social' />
-                  <p>{item.label}</p>
-                </div>
-              </a>
-            ))}
+            {socialLinks.map((item, index) => {
+              if (index !== 2) {
+                return (
+                  <a
+                    key={index}
+                    href={item.link}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                  >
+                    <div className='flex items-center space-x-4'>
+                      <Image
+                        src={item.icon}
+                        height={16}
+                        width={16}
+                        alt='social'
+                      />
+                      <p>{item.label}</p>
+                    </div>
+                  </a>
+                )
+              } else {
+                return (
+                  <a key={index} href={item.link}>
+                    <div className='flex items-center space-x-4'>
+                      <Image
+                        src={item.icon}
+                        height={16}
+                        width={16}
+                        alt='social'
+                      />
+                      <p>{item.label}</p>
+                    </div>
+                  </a>
+                )
+              }
+            })}
           </div>
         </div>
       </div>
-      <div className='container flex text-cool-gray-40 border-t border-secondary pt-16 f-caption-1'>
-        <div className='w-1/2-cols mr-gutter'>
-          ©{year}{' '}
-          {locale === 'en'
-            ? 'Ololt. All rights reserved.'
-            : 'Ололт. Бүх эрх хуулиар хамгаалагдсан.'}
-        </div>
-        <div className='w-1/2-cols'>
-          <a
-            href='https://www.22dlab.com'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
+      <div className='w-full border-t border-secondary'>
+        <div className='container flex text-cool-gray-40 pt-16 f-caption-1'>
+          <div className='w-1/2-cols mr-gutter'>
+            ©{year}{' '}
             {locale === 'en'
-              ? 'Website by 22DesignLab'
-              : 'Вебсайтыг 22DesignLab'}
-          </a>
+              ? 'OLOLT Center. All Rights Reserved.'
+              : 'ОЛОЛТ Төв. Бүх эрх хуулиар хамгаалагдсан..'}
+          </div>
+          <div className='w-1/2-cols'>
+            <a
+              href='https://www.22dlab.com'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              {locale === 'en'
+                ? 'Website by 22DesignLab'
+                : 'Вебсайтыг 22DesignLab'}
+            </a>
+          </div>
         </div>
       </div>
     </footer>
