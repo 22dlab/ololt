@@ -35,9 +35,9 @@ export default async function Home() {
   const videos = await client.fetch(getVideos)
   const partners = await client.fetch(getPartners)
 
-  // return (
-  //   <HomePage news={news} videos={videos.slice(0, 2)} partners={partners} />
-  // )
+  return (
+    <HomePage news={news} videos={videos.slice(0, 2)} partners={partners} />
+  )
 
-  return <Construction />
+  // return <Construction />
 }
