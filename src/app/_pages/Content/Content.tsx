@@ -13,6 +13,7 @@ import ThreeFeature from './ThreeFeature'
 import ThreeStep from './ThreeStep'
 import Accordion from './Accordion'
 import ListImage from './ListImage'
+import LinkImage from './LinkImage'
 import Photo from './Photo'
 import Logo from './Logo'
 
@@ -168,6 +169,9 @@ export default function Content({ content }: { content: ContentType[] }) {
                         }
                         case 'listImage': {
                           return <ListImage key={index} item={item} />
+                        }
+                        case 'linkImage': {
+                          return <LinkImage key={index} item={item} />
                         }
                         case 'photo': {
                           return <Photo key={index} item={item} />

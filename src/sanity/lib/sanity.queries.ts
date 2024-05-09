@@ -24,6 +24,15 @@ const Content = `
     mn,
     en,
     title,
+    image {
+      en {
+        ${Image}
+      },
+      mn {
+        ${Image}
+      }
+    },
+    link,
     items[]{
       icon {
         ${Image}

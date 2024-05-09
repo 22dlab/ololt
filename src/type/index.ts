@@ -23,6 +23,11 @@ export type ItemType = {
   mn?: any[]
   en?: any[]
   title?: LocaleString
+  link?: string
+  image: {
+    en: ImageType
+    mn: ImageType
+  }
   items?: [
     {
       icon?: ImageType
