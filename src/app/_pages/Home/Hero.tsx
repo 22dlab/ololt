@@ -74,8 +74,7 @@ export default function Hero() {
     rings: 1,
     maxRings: 3,
     initialPosition: { lat: 47.992, lng: 106.915 },
-    autoRotate: false,
-    autoRotateSpeed: 0.3
+    autoRotate: false
   }
   const colors = ['#EC008C']
   const sampleArcs = [
