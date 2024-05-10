@@ -439,8 +439,8 @@ export default function Hero() {
           >
             <p className='f-heading-3'>
               {locale === 'en'
-                ? 'Climate Change in Mongolia'
-                : 'Монгол Улс дахь Уур Амьсгалын Өөрчлөлт'}
+                ? 'Upholding Mongolia’s Climate Integrity: Our Shared Commitment'
+                : 'Уур амьсгалын өөрчлөлтийг сааруулах нь бидний хамтын үүрэг хариуцлага.'}
             </p>
             <p className='text-secondary f-body-1'>
               {locale === 'en'

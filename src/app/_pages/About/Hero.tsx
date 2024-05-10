@@ -32,8 +32,8 @@ export default function Hero() {
           <div className='lg:w-8-cols-vw'>
             <p className='text-inverse f-subhead-1'>
               {locale === 'en'
-                ? 'At OLOLT Center, we are committed to Driving Timely Climate Actions in collaboration with state and non-state national and international stakeholders, mobilizing resources effectively, and upholding principles of fairness, inclusivity, transparency, and high integrity.'
-                : 'ОЛОЛТ Төв нь ёс зүй, шударга ёс, хүртээмжтэй, ил тод зарчмыг эрхэмлэн үндэсний болон олон улсын олон талуудтай хамтран, нийгмийн сайн сайхны төлөө уур амьсгалын өөрчлөлтийг сааруулах үйлсэд бодит хувь нэмэр оруулах эрхэм зорилготой мэргэжлийн төрийн бус байгууллага юм.'}
+                ? 'OLOLT Center: Empowering Timely Climate Action through Dedication, Inclusive Partnerships, and Integrity.'
+                : 'Ололт төв нь ёс зүй, олон талын оролцоог хангасан түншлэлд түшиглэн уур амьсгалын өөрчлөлтийг сааруулахад тууштай хувь нэмэр оруулна.'}
             </p>
           </div>
         </div>
