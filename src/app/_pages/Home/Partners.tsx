@@ -11,9 +11,7 @@ export default function Partners({ partners }: { partners: PartnerType[] }) {
   return (
     <div className='w-full py-48 bg-secondary space-y-40'>
       <p className='text-center f-heading-4 text-secondary'>
-        {locale === 'en'
-          ? 'International partners'
-          : 'Олон улсын хамтрагч байгууллагууд'}
+        {locale === 'en' ? 'Partners' : 'Хамтрагч байгууллагууд'}
       </p>
       <div className='flex flex-wrap justify-center px-0 md:px-96 lg:px-48 pt-20 bg-primary container'>
         {partners.map((item, index) => (

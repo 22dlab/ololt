@@ -18,7 +18,7 @@ export default function Hero() {
         <div className='container'>
           <div className='lg:w-6-cols-vw'>
             <p className='text-primary f-display-2'>
-              {locale === 'en' ? 'Contact us' : 'Бидэнтэй холбогдох'}
+              {locale === 'en' ? 'Contact us' : 'Холбоо барих'}
             </p>
           </div>
         </div>

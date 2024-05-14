@@ -41,8 +41,8 @@ export default function Footer() {
       link: '/carbon-market'
     },
     {
-      en: 'ESG',
-      mn: 'БОНЗ',
+      en: 'Environment, Social, Governance',
+      mn: 'Байгаль орчин, Нийгэм, Засаглал',
       link: '/esg'
     },
     {
