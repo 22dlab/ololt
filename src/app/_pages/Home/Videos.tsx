@@ -17,8 +17,12 @@ export default function Videos({ videos }: { videos: VideoType[] }) {
       <div className='container py-32 md:py-64 space-y-0 md:space-y-0'>
         <div className='w-full grid grid-cols-1 md:grid-cols-2 gap-gutter'>
           {videos.map((item, index) => (
-            <div key={index} className='w-full aspect-video'>
-              <ReactPlayer url={item.link} width='100%' height='100%' />
+            <div key={index} className='w-full space-y-24'>
+              <div className='w-full aspect-video'>
+                <ReactPlayer url={item.link} width='100%' height='100%' />
+              </div>
+              <p className='text-inverse f-heading-3'>{item.title[locale]}</p>
+              <p className='text-inverse f-body-1'>{item.caption[locale]}</p>
             </div>
           ))}
         </div>

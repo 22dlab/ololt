@@ -138,7 +138,7 @@ export default function About() {
             <p className='f-body-1'>
               {locale === 'en'
                 ? 'Our mission is to effectively scale our efforts to advance national targets in line with the Paris Agreement. Through strategic partnerships, empowering professional communities, conducting scientific and economic research, and advocating for change, we aim to foster sustainable change while ensuring accountability, equity, and integrity in all our endeavors.'
-                : 'Бидний эрхэм зорилго Парисын хэлэлцээрийн хүрээнд үндэсний тодорхойлсон зорилтыг хэрэгжүүлэхэд бодит хувь нэмэр оруулах, үйл ажиллагааныхаа цар хүрээ, үр дүн, хүртээмжийг стратегийн үр дүнтэй түншлэл буюу мэргэжлийн болон судалгаа, сурталчилгааны байгууллага, хувийн хэвшил, орон нутгийн төлөөллүүдтэй хамтран ажиллах замаар тэлэхэд оршино.  Ингэхдээ тэгш эрх, шударга ёсны зарчмыг тууштай баримтална'}
+                : 'Бидний эрхэм зорилго Парисын хэлэлцээрийн хүрээнд үндэсний тодорхойлсон зорилтыг хэрэгжүүлэхэд бодит хувь нэмэр оруулах, үйл ажиллагааныхаа цар хүрээ, үр дүн, хүртээмжийг стратегийн үр дүнтэй түншлэл буюу мэргэжлийн болон судалгаа, сурталчилгааны байгууллага, хувийн хэвшил, орон нутгийн төлөөллүүдтэй хамтран ажиллах замаар тэлэхэд оршино.  Ингэхдээ тэгш эрх, шударга ёсны зарчмыг тууштай баримтална.'}
             </p>
           </div>
         </div>

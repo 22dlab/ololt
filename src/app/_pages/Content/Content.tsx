@@ -18,6 +18,7 @@ import Photo from './Photo'
 import Logo from './Logo'
 
 import { useCurrentLocale } from '@/locale/client'
+import FileDownload from './FileDownload'
 
 export default function Content({ content }: { content: ContentType[] }) {
   const locale = useCurrentLocale()
@@ -42,7 +43,6 @@ export default function Content({ content }: { content: ContentType[] }) {
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      window.scrollBy({ top: 1 })
       window.scrollBy({ top: 0 })
       window.addEventListener('scroll', handleScroll)
       return () => window.removeEventListener('scroll', handleScroll)
@@ -178,6 +178,9 @@ export default function Content({ content }: { content: ContentType[] }) {
                         }
                         case 'logo': {
                           return <Logo key={index} item={item} />
+                        }
+                        case 'fileDownlaod': {
+                          return <FileDownload key={index} item={item} />
                         }
                       }
                     })}

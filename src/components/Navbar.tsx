@@ -47,7 +47,7 @@ export default function Navbar() {
     },
     {
       en: 'Contact us',
-      mn: 'Бидэнтэй холбогдох',
+      mn: 'Холбоо барих',
       link: '/contact'
     },
     {

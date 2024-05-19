@@ -40,8 +40,14 @@ const Content = `
       photo {
         ${Image}
       },
+      file {
+        asset -> {
+          url
+        }
+      },
       link,
       label,
+      sublabel,
       value,
       question,
       answer,

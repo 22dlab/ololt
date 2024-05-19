@@ -32,7 +32,13 @@ export type ItemType = {
     {
       icon?: ImageType
       photo?: ImageType
+      file?: {
+        asset: {
+          url: string
+        }
+      }
       label?: LocaleString
+      sublabel?: LocaleString
       title?: LocaleString
       value?: LocaleString
       body?: {

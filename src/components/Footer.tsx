@@ -22,7 +22,7 @@ export default function Footer() {
     },
     {
       en: 'Contact us',
-      mn: 'Бидэнтэй холбогдох',
+      mn: 'Холбоо барих',
       link: '/contact'
     },
     {
