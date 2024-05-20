@@ -2,6 +2,8 @@ import { ItemType } from '@/type'
 
 import { PortableText, PortableTextComponents } from 'next-sanity'
 
+import { useCurrentLocale } from '@/locale/client'
+
 export default function ThreeStep({ item }: { item: ItemType }) {
   const components: PortableTextComponents = {
     block: {
@@ -17,9 +19,11 @@ export default function ThreeStep({ item }: { item: ItemType }) {
     }
   }
 
+  const locale = useCurrentLocale()
+
   return (
     <div className='lg:w-9-cols-vw space-y-32'>
-      <p className='f-heading-4'>{item.title?.en}</p>
+      <p className='f-heading-4'>{item.title?.[locale]}</p>
       <div className='grid grid-cols-1 lg:grid-cols-3 gap-x-gutter gap-y-16'>
         {item.items?.map((x, index) => (
           <div
@@ -27,9 +31,9 @@ export default function ThreeStep({ item }: { item: ItemType }) {
             className='border-l border-secondary py-8 px-16 space-y-8'
           >
             <p className='f-ui-1 text-accent'>Step {index + 1}:</p>
-            <p className='f-heading-4 h-72 lg:h-96'>{x.title?.en}</p>
+            <p className='f-heading-4 h-72 lg:h-96'>{x.title?.[locale]}</p>
             <div className='f-ui-1 text-secondary'>
-              <PortableText value={x.body?.en} components={components} />
+              <PortableText value={x.body?.[locale]} components={components} />
             </div>
           </div>
         ))}

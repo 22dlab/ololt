@@ -4,7 +4,11 @@ import { ItemType } from '@/type'
 
 import { PortableText, PortableTextComponents } from 'next-sanity'
 
+import { useCurrentLocale } from '@/locale/client'
+
 export default function ThreeFeature({ item }: { item: ItemType }) {
+  const locale = useCurrentLocale()
+
   const components: PortableTextComponents = {
     block: {
       h4: ({ children }) => <h4 className='f-heading-4'>{children}</h4>
@@ -18,7 +22,7 @@ export default function ThreeFeature({ item }: { item: ItemType }) {
 
   return (
     <div className='lg:w-9-cols-vw space-y-32'>
-      <p className='f-heading-4'>{item.title?.en}</p>
+      <p className='f-heading-4'>{item.title?.[locale]}</p>
       <div className='grid grid-cols-1 lg:grid-cols-3 gap-x-gutter gap-y-32'>
         {item.items?.map((x, index) => (
           <div key={index} className='space-y-16 block md:flex lg:block'>
@@ -26,13 +30,16 @@ export default function ThreeFeature({ item }: { item: ItemType }) {
               <SanityImage
                 className='object-contain object-center'
                 image={x.icon!}
-                alt={x.label?.en!}
+                alt={x.label?.[locale]!}
               />
             </div>
             <div className='space-y-16 w-full md:w-5-cols-vw lg:w-full'>
-              <p className='f-subhead-2'>{x.title?.en}</p>
+              <p className='f-subhead-2'>{x.title?.[locale]}</p>
               <div className='f-body-1 text-secondary'>
-                <PortableText value={x.body?.en} components={components} />
+                <PortableText
+                  value={x.body?.[locale]}
+                  components={components}
+                />
               </div>
             </div>
           </div>

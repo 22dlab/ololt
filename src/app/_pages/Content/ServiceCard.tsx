@@ -1,11 +1,14 @@
 import SanityImage from '@/components/SanityImage'
+import { useCurrentLocale } from '@/locale/client'
 
 import { ItemType } from '@/type'
 
 export default function ServiceCard({ item }: { item: ItemType }) {
+  const locale = useCurrentLocale()
+
   return (
     <div className='lg:w-6-cols-vw space-y-32'>
-      <p className='f-heading-4'>{item.title?.en}</p>
+      <p className='f-heading-4'>{item.title?.[locale]}</p>
       <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-2 gap-x-gutter gap-y-32'>
         {item.items?.map((x, index) => (
           <div
@@ -16,10 +19,10 @@ export default function ServiceCard({ item }: { item: ItemType }) {
               <SanityImage
                 className='object-contain object-center'
                 image={x.icon!}
-                alt={x.label?.en!}
+                alt={x.label?.[locale]!}
               />
             </div>
-            <p className='f-body-1 text-secondary'>{x.label?.en}</p>
+            <p className='f-body-1 text-secondary'>{x.label?.[locale]}</p>
           </div>
         ))}
       </div>

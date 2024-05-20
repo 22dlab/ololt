@@ -6,6 +6,8 @@ import { useState } from 'react'
 
 import { PortableText, PortableTextComponents } from 'next-sanity'
 
+import { useCurrentLocale } from '@/locale/client'
+
 export default function Accordion({ item }: { item: ItemType }) {
   const [active, setActive] = useState(-1)
 
@@ -25,9 +27,11 @@ export default function Accordion({ item }: { item: ItemType }) {
     }
   }
 
+  const locale = useCurrentLocale()
+
   return (
     <div className='lg:w-6-cols-vw space-y-32'>
-      <p className='f-heading-4'>{item.title?.en}</p>
+      <p className='f-heading-4'>{item.title?.[locale]}</p>
       <div className='space-y-16'>
         {item.items?.map((x, index) => (
           <div key={index}>
@@ -35,7 +39,7 @@ export default function Accordion({ item }: { item: ItemType }) {
               onClick={() => handleClick(index)}
               className='w-full flex p-16 justify-between space-x-16 bg-secondary'
             >
-              <p className='f-heading-5 text-left'>{x.question?.en}</p>
+              <p className='f-heading-5 text-left'>{x.question?.[locale]}</p>
               <svg
                 width='24'
                 height='24'
@@ -60,7 +64,10 @@ export default function Accordion({ item }: { item: ItemType }) {
               } overflow-hidden transition-transform w-full p-16`}
             >
               <div className='f-body-1 text-secondary'>
-                <PortableText value={x.answer?.en} components={components} />
+                <PortableText
+                  value={x.answer?.[locale]}
+                  components={components}
+                />
               </div>
             </div>
           </div>
