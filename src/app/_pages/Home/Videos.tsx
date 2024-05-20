@@ -21,8 +21,8 @@ export default function Videos({ videos }: { videos: VideoType[] }) {
               <div className='w-full aspect-video'>
                 <ReactPlayer url={item.link} width='100%' height='100%' />
               </div>
-              <p className='text-inverse f-heading-3'>{item.title[locale]}</p>
-              <p className='text-inverse f-body-1'>{item.caption[locale]}</p>
+              <p className='text-inverse f-heading-3'>{item.title?.[locale]}</p>
+              <p className='text-inverse f-body-1'>{item.caption?.[locale]}</p>
             </div>
           ))}
         </div>
